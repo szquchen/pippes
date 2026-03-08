@@ -1,0 +1,60 @@
+<simulation verbosity="low">
+    <output prefix="simulation">
+    <properties stride='1' filename='out'>  [ step, time{picosecond}, conserved{kilocal/mol}, temperature{kelvin}, potential, pressure_cv{megapascal}, ensemble_pressure{atmosphere}, pressure_md{atmosphere}, volume, density{g/cm3} ] </properties>
+        <trajectory filename='pos' stride='100' format='xyz' cell_units='angstrom'> positions {angstrom}</trajectory>
+        <trajectory filename='for' stride='100' format='xyz' cell_units='angstrom'> forces </trajectory>
+        <checkpoint stride="20000" filename="restart" overwrite="true"/>
+    </output>
+    <total_steps> 2000000 </total_steps>
+    <prng><seed> 4331 </seed></prng>
+    <ffsocket mode="unix" pbc="false"  name="driver">
+        <address> driver1 </address>
+        <latency> 0.01 </latency>
+        <timeout> 4000 </timeout>
+    </ffsocket>
+      <system>
+    <initialize nbeads='1'>
+      <file mode="xyz" units='angstrom'> 256mer.xyz </file>
+      <cell mode='abc' units='angstrom'>
+        [19.7295,19.7295,19.7295]
+      </cell>
+      <velocities mode='thermal' units='kelvin'>298.15</velocities>
+    </initialize>
+    <forces>
+      <force forcefield='driver'/>
+    </forces>
+    <ensemble>
+      <temperature units='kelvin'>298.15</temperature>
+      <pressure units='atmosphere'> 1.0 </pressure>
+    </ensemble>
+    <motion mode='dynamics'>
+      <fixcom> True </fixcom>
+      <dynamics mode='npt'>
+        <barostat mode='isotropic'>
+        <thermostat mode='gle'>
+          <A shape='(5,5)'>
+            [   1.119252684345e-2,    8.975945537096e-6,   -2.728650447177e-5,   -7.011051989908e-4,    8.414373543550e-3,
+         1.194065829660e-7,    1.071876106695e-6,   -9.439643019253e-6,   -1.329262116026e-5,   -2.667325152958e-6,
+         2.161979961890e-4,    9.439643019253e-6,    4.639122293442e-5,    4.329184279724e-6,    8.132076333400e-5,
+        -7.322257663569e-4,    1.329262116026e-5,   -4.329184279724e-6,    5.173717780694e-4,    1.590872642196e-5,
+         8.299189140989e-3,    2.667325152958e-6,   -8.132076333400e-5,   -1.590872642196e-5,    6.992095202254e-3
+           ]
+          </A>
+        </thermostat>
+        <tau units='femtosecond'>1000</tau>
+       </barostat>
+       <thermostat mode='gle'>
+         <A shape='(5,5)'>
+           [   1.119252684345e-2,    8.975945537096e-6,   -2.728650447177e-5,   -7.011051989908e-4,    8.414373543550e-3,
+        1.194065829660e-7,    1.071876106695e-6,   -9.439643019253e-6,   -1.329262116026e-5,   -2.667325152958e-6,
+        2.161979961890e-4,    9.439643019253e-6,    4.639122293442e-5,    4.329184279724e-6,    8.132076333400e-5,
+       -7.322257663569e-4,    1.329262116026e-5,   -4.329184279724e-6,    5.173717780694e-4,    1.590872642196e-5,
+        8.299189140989e-3,    2.667325152958e-6,   -8.132076333400e-5,   -1.590872642196e-5,    6.992095202254e-3
+          ]
+         </A>
+       </thermostat>
+        <timestep units='femtosecond'>0.500</timestep>
+      </dynamics>
+    </motion>
+  </system>
+</simulation>
