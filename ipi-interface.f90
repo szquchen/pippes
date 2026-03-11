@@ -27,7 +27,8 @@
 ! the ideal gas (i.e. no interaction at all)
 
       PROGRAM DRIVER
-         USE pes_shell
+         USE qaqua_pol_shell
+         USE oxa_shell
          USE DISTANCE, only: CELL_VOLUME
          USE F90SOCKETS, ONLY : open_socket, writebuffer, readbuffer, f_sleep
       IMPLICIT NONE
@@ -55,35 +56,26 @@
       DOUBLE PRECISION, ALLOCATABLE :: msgbuffer(:)
       
       ! PARAMETERS OF THE SYSTEM (CELL, ATOM POSITIONS, ...)
-      DOUBLE PRECISION sigma, eps, rc1, rn, ks ! potential parameters
-      DOUBLE PRECISION stiffness ! lennard-jones polymer
       DOUBLE PRECISION sleep_seconds
-      INTEGER n_monomer ! lennard-jones polymer
       INTEGER nat
-      DOUBLE PRECISION pot, dpot, dist
+      DOUBLE PRECISION pot
       DOUBLE PRECISION, ALLOCATABLE :: atoms(:,:), forces(:,:), datoms(:,:)
       DOUBLE PRECISION cell_h(3,3), cell_ih(3,3), virial(3,3), mtxbuf(9), dip(3), charges(3), dummy(3,3,3), vecdiff(3)
       DOUBLE PRECISION, ALLOCATABLE :: friction(:,:)
       DOUBLE PRECISION volume
-      DOUBLE PRECISION, PARAMETER :: fddx = 1.0d-5
  
-      DOUBLE PRECISION, ALLOCATABLE :: dipz_der(:, :) ! Dipole (z-component) derivative (water_dip_pol model)
-      DOUBLE PRECISION :: pol(3, 3) !Polarizability (water_dip_pol model)
-
       ! NEIGHBOUR LIST ARRAYS
       INTEGER, DIMENSION(:), ALLOCATABLE :: n_list, index_list
       DOUBLE PRECISION init_volume, init_rc ! needed to correctly adjust the cut-off radius for variable cell dynamics
       DOUBLE PRECISION, ALLOCATABLE :: last_atoms(:,:) ! Holds the positions when the neighbour list is created
       DOUBLE PRECISION displacement ! Tracks how far each atom has moved since the last call of nearest_neighbours
-
-      ! DMW
-      DOUBLE PRECISION efield(3)
       INTEGER i, j
 
       ! Qi: additional variables for q-AQUA-pol
-      DOUBLE PRECISION :: box(3)
-      INTEGER :: natm
-      real::tmpx(768,3),tmpgd(768,3),pot1,pot2,delta1,tmpbox(3),tmpvirial(3,3)
+      DOUBLE PRECISION box(3)
+      INTEGER natm
+!      DOUBLE PRECISION tmpx(768,3), tmpgd(768,3), tmpbox(3), tmpvirial(3,3)
+!      DOUBLE PRECISION pot1, pot2, delta1
       
       ! parse the command line parameters
       ! intialize defaults
@@ -94,7 +86,6 @@
       verbose = 0
       par_count = 0
       vstyle = -1
-      rc1 = 0.0d0
       init_rc = 0.0d0
       volume = 0.0d0
       init_volume = 0.0d0
@@ -132,8 +123,11 @@
                IF (verbose>0) THEN
                   WRITE(*,*) "Running potential type ", trim(cmdbuffer)
                ENDIF
+               ! choose the PIP potential
                IF (trim(cmdbuffer) == "q-aqua-pol") THEN
                   vstyle = 1
+               ELSEIF (trim(cmdbuffer) == "oxalate") THEN
+                  vstyle = 2
                ELSEIF (trim(cmdbuffer) == "dummy") THEN
                   vstyle = 99 ! returns non-zero but otherwise meaningless values
                ELSE
@@ -156,7 +150,8 @@
             ccmd = 0
          ENDIF
       ENDDO
-      
+
+      ! Initialize the PIP potential
       IF (vstyle == -1) THEN
          WRITE(*,*) " Error, type of potential not specified."
          CALL helpmessage
@@ -183,6 +178,13 @@
          natm = 768
          nw = natm/3
          call pes_init(nw) 
+         isinit = .true.
+      ELSEIF (2 == vstyle) THEN
+         IF (par_count /= 0) THEN
+            WRITE(*,*) "Error: no initialization string needed."
+            STOP "ENDED"
+         ENDIF
+         call oxa_init()
          isinit = .true.
       ENDIF
 
@@ -266,6 +268,7 @@
                atoms(i,:) = msgbuffer(3*(i-1)+1:3*i)
             ENDDO
 
+            ! Compute energy and force (and optional virial) using PIP PES
             IF (vstyle == 99) THEN ! dummy output, useful to test that i-PI "just runs"
                IF (sleep_seconds > 0) THEN
                   ! artificial delay
@@ -284,7 +287,9 @@
                box(1) = cell_h(1,1)
                box(2) = cell_h(2,2)
                box(3) = cell_h(3,3)
-               call fg_all(atoms,pot,forces,virial,box)
+               call fg_all(atoms, pot, forces, virial, box)
+            ELSEIF (vstyle == 2) THEN
+               call oxa_ef(atoms, pot, forces)
             ENDIF
             hasdata = .true. ! Signal that we have data ready to be passed back to the wrapper
          ELSEIF (trim(header) == "GETFORCE") THEN  ! The driver calculation is finished, it's time to send the results back to the wrapper

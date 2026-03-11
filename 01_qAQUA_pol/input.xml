@@ -5,10 +5,10 @@
         <trajectory filename='for' stride='100' format='xyz' cell_units='angstrom'> forces </trajectory>
         <checkpoint stride="20000" filename="restart" overwrite="true"/>
     </output>
-    <total_steps> 2000000 </total_steps>
+    <total_steps> 2000 </total_steps>
     <prng><seed> 4331 </seed></prng>
     <ffsocket mode="unix" pbc="false"  name="driver">
-        <address> driver1 </address>
+        <address> driver </address>
         <latency> 0.01 </latency>
         <timeout> 4000 </timeout>
     </ffsocket>

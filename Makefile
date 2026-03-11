@@ -19,23 +19,35 @@
 # TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE
 # SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
-.PHONY: all modules clean
-FC  := ifort -r8 -O3 -qopenmp -mcmodel=large -ftz -fpp -Bstatic
-FFLAGS  := -qmkl=parallel
+.PHONY: all install modules clean
+CC=gcc
+FLAGS=-g -O3 -Wall
+CFLAGS=$(FLAGS)
 
-MODULES=distance.f90
-PES = q_aqua_pol/constants.f90 q_aqua_pol/math.f90 q_aqua_pol/nasa_mod.f90 q_aqua_pol/t_ewald.f90 q_aqua_pol/t_model_mod.f90 q_aqua_pol/pot_ttm.f90 q_aqua_pol/bemsa2b.f90 q_aqua_pol/bemsa3b.f90 q_aqua_pol/bemsa4b.f90 q_aqua_pol/potential.f90 q_aqua_pol/pes_shell.f90
-OBJECTS=$(MODULES:%.f90=%.o) $(PES:%.f90=%.o)
+# Fortran Compiling Flags for gfortran and intel Fortran
+FC=gfortran
+FFLAGS=$(FLAGS) -ffree-line-length-none -ffixed-line-length-none -Wno-maybe-uninitialized -fdefault-real-8 -fdefault-double-8 -fopenmp
+# FC=ifx
+# FFLAGS=-r8 -O3 -qopenmp -mcmodel=large
 
-CC=gcc -g -O3 -Wall
-all: driver.x #driver_pure.x
+MODULES=distance.f90 constants.f90 morse.f90
+PES01=01_qAQUA_pol/math.f90 01_qAQUA_pol/nasa_mod.f90 01_qAQUA_pol/t_ewald.f90 \
+      01_qAQUA_pol/t_model_mod.f90 01_qAQUA_pol/pot_ttm.f90 \
+      01_qAQUA_pol/bemsa2b.f90 01_qAQUA_pol/bemsa3b.f90 01_qAQUA_pol/bemsa4b.f90 \
+      01_qAQUA_pol/potential.f90 01_qAQUA_pol/qaqua_pol_shell.f90
+PES02=02_oxa/bemsa421.f90 02_oxa/oxa_shell.f90
+
+OBJECTS=$(MODULES:%.f90=%.o) $(PES01:%.f90=%.o) $(PES02:%.f90=%.o)
+all: install
 
 sockets.o: sockets.c
 	$(CC) $(CFLAGS) -c -o sockets.o sockets.c
 
-driver.x: $(OBJECTS) sockets.o fsockets.o driver.o | $(OBJECTS)
-	$(FC) $(FFLAGS) -o driver.x $^
-	ln -fs ../drivers/f90/driver.x ../../bin/i-pi-driver
+ipi-interface.x: $(OBJECTS) sockets.o fsockets.o ipi-interface.o | $(OBJECTS)
+	$(FC) $(FFLAGS) -o $@ $^
+
+install: ipi-interface.x
+	ln -fs ../drivers/pippes/ipi-interface.x ../../bin/i-pi-driver
 
 #driver_pure.x: $(OBJECTS) fsockets_pure.o driver.o | $(OBJECTS)
 #	$(FC) $(FFLAGS) -o driver_pure.x $^
