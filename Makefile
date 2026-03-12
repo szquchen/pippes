@@ -47,7 +47,7 @@ ipi-interface.x: $(OBJECTS) sockets.o fsockets.o ipi-interface.o | $(OBJECTS)
 	$(FC) $(FFLAGS) -o $@ $^
 
 install: ipi-interface.x
-	ln -fs ../drivers/pippes/ipi-interface.x ../../bin/i-pi-driver
+	ln -fs $(CURDIR)/ipi-interface.x $(IPI_ROOT)/bin/i-pi-driver
 
 #driver_pure.x: $(OBJECTS) fsockets_pure.o driver.o | $(OBJECTS)
 #	$(FC) $(FFLAGS) -o driver_pure.x $^
