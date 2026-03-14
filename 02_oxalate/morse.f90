@@ -4,17 +4,16 @@ module morse
 contains
   subroutine get_morse(xyz,r,morse,a)
     real,dimension(:,:),intent(in)::xyz ! size (3,natom)
-    real,dimension(size(xyz,1)*(size(xyz,1)-1)/2)::morse
-    real,dimension(size(xyz,1),size(xyz,1))::r
+    real,dimension(size(xyz,2)*(size(xyz,2)-1)/2)::morse
+    real,dimension(size(xyz,2),size(xyz,2))::r
     integer::i,j,k,natm
     real::a
 
-    natm = size(xyz,1)
-
+    natm = size(xyz,2)
     k = 1
     do i=1,natm-1
-       do j=1,natm
-          r(i,j) = norm2(xyz(i,:)-xyz(j,:))
+       do j=i+1,natm
+          r(i,j) = norm2(xyz(:,i)-xyz(:,j))
           r(j,i) = r(i,j)
           morse(k) = r(i,j)
           k = k + 1

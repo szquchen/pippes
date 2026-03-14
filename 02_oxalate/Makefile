@@ -31,19 +31,18 @@ FFLAGS=$(FLAGS) -ffree-line-length-none -ffixed-line-length-none -Wno-maybe-unin
 # FFLAGS=-r8 -O3 -qopenmp -mcmodel=large
 
 MODULES=distance.f90 constants.f90 morse.f90
-PES01=01_qAQUA_pol/math.f90 01_qAQUA_pol/nasa_mod.f90 01_qAQUA_pol/t_ewald.f90 \
-      01_qAQUA_pol/t_model_mod.f90 01_qAQUA_pol/pot_ttm.f90 \
-      01_qAQUA_pol/bemsa2b.f90 01_qAQUA_pol/bemsa3b.f90 01_qAQUA_pol/bemsa4b.f90 \
-      01_qAQUA_pol/potential.f90 01_qAQUA_pol/qaqua_pol_shell.f90
-PES02=02_oxa/bemsa421.f90 02_oxa/oxa_shell.f90
+PES=src/bemsa421.f90 src/oxa_shell.f90
 
-OBJECTS=$(MODULES:%.f90=%.o) $(PES01:%.f90=%.o) $(PES02:%.f90=%.o)
+OBJECTS=$(MODULES:%.f90=%.o) $(PES:%.f90=%.o)
 all: install
 
 sockets.o: sockets.c
 	$(CC) $(CFLAGS) -c -o sockets.o sockets.c
 
 ipi-interface.x: $(OBJECTS) sockets.o fsockets.o ipi-interface.o | $(OBJECTS)
+	$(FC) $(FFLAGS) -o $@ $^
+
+test.x: $(OBJECTS) test.o
 	$(FC) $(FFLAGS) -o $@ $^
 
 install: ipi-interface.x

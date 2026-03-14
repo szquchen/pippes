@@ -5,6 +5,7 @@ use bemsa421
 implicit none
 
   real::oxa_coeff(9923) ! number of coefficients
+  character(len=90)::coef_path='/home/quchen/Bowman/projects/pippes/02_oxalate/coeff'
 
 contains
   !==================================!
@@ -13,11 +14,8 @@ contains
   subroutine oxa_init()
     !::::::::::::::::::
     integer::i
-    character(len=99)::path
 
-    path = "../drivers/pippes/02_oxa/coeff_421_oxa.dat"
-    open(10,file=trim(path),status='old')
-
+    open(10,file=trim(coef_path)//'/coeff_421_oxa.dat',status='old')
     do i=1,size(oxa_coeff)
        read (10,*) oxa_coeff(i)
     end do
@@ -38,7 +36,7 @@ contains
     real::m(31767), p(9923)
     integer::i,j,k
 
-    call get_morse(x, r, morse, 2.0)
+    call get_morse(transpose(x), r, morse, 2.0)
     call evmono421(morse, m)
     call evpoly421(m, p)
     oxa_pot = dot_product(p, oxa_coeff) + 5.689024940580545E-007
@@ -58,7 +56,7 @@ contains
     real::m(31767), p(9923)
     integer::i
 
-    call get_morse(x, r, morse, 2.0)
+    call get_morse(transpose(x), r, morse, 2.0)
     call evmono421(morse,m)
     call evpoly421(m,p)
     pot = dot_product(p, oxa_coeff) + 5.689024940580545E-007
