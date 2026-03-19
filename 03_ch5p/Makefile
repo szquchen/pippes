@@ -30,8 +30,8 @@ FFLAGS=$(FLAGS) -ffree-line-length-none -ffixed-line-length-none -Wno-maybe-unin
 # FC=ifx
 # FFLAGS=-r8 -O3 -qopenmp -mcmodel=large
 
-MODULES=distance.f90 constants.f90
-PES=src/bemsa.f90 src/oxa_shell.f90
+MODULES=distance.f90
+PES=src/bemsa.f90 src/pes_shell.f90
 
 OBJECTS=$(MODULES:%.f90=%.o) $(PES:%.f90=%.o)
 all: install

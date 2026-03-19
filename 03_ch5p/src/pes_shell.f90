@@ -36,20 +36,17 @@ contains
 
   !================================!
   ! calculate the potential energy !
-  !   x(188888888dinates in bohr !
+  !   x(6,3): Cartesians in bohr   !
   !================================!
-  function f(x)
-    real::x(18),xyz(6,3),morse(15), f
+  function f(xyz)
+    real::xyz(6,3),morse(15), f
     real::m(14029), p(849)
     integer::i
 
-    do i=1,6
-       xyz(i,:) = x(3*i-2:3*i)
-    end do
     call get_x(xyz, morse)
     call evmono(morse, m)
     call evpoly(m, p)
-    f = dot_product(coef, p)
+    f = dot_product(coef, p) + 40.6527260490003
 
     return
   end function
@@ -58,38 +55,22 @@ contains
   ! calculate the gradients        !
   !   x(3,15): coordinates in bohr !
   !================================!
-  function g(x)
-    real::x(18), g(18), xyz(6,3)
-    real::m(14029), p(849), morse(15)
+  subroutine calc_ef(xyz,pot,force)
+    real::force(6,3), xyz(6,3), gtemp(18)
+    real::m(14029), p(849), morse(15), pot
     integer::i
 
-    do i=1,6
-       xyz(i,:) = x(3*i-2:3*i)
-    end do
     call get_x(xyz, morse)
     call evmono(morse, m)
     call evpoly(m, p)
-    call derivative_reverse(coef,m,p,xyz,g)
-
-    return
-  end function
-
-  !=============================!
-  ! Hessian using the gradient  !
-  !=============================!
-  subroutine hessian(x,H)
-    real,dimension(:),intent(in)::x
-    real,dimension(:,:),intent(inout)::H
-    !:::::::::::::::::::::::::::
-    real::xyz(6,3)
-    integer::i
+    pot = dot_product(p, coef) + 40.6527260490003
+    call derivative_reverse(coef,m,p,xyz,gtemp)
 
     do i=1,6
-       xyz(i,:) = x(3*i-2:3*i)
+       force(i,1:3) = -gtemp(3*i-2:3*i)
     end do
-    call hessianrev(coef,xyz,H)
 
     return
-  end subroutine hessian
+  end subroutine
 
 end module

@@ -27,8 +27,7 @@
 ! the ideal gas (i.e. no interaction at all)
 
       PROGRAM DRIVER
-         USE qaqua_pol_shell
-         USE oxa_shell
+         USE pes_shell
          USE DISTANCE, only: CELL_VOLUME
          USE F90SOCKETS, ONLY : open_socket, writebuffer, readbuffer, f_sleep
       IMPLICIT NONE
@@ -71,12 +70,6 @@
       DOUBLE PRECISION displacement ! Tracks how far each atom has moved since the last call of nearest_neighbours
       INTEGER i, j
 
-      ! Qi: additional variables for q-AQUA-pol
-      DOUBLE PRECISION box(3)
-      INTEGER natm
-!      DOUBLE PRECISION tmpx(768,3), tmpgd(768,3), tmpbox(3), tmpvirial(3,3)
-!      DOUBLE PRECISION pot1, pot2, delta1
-      
       ! parse the command line parameters
       ! intialize defaults
       ccmd = 0
@@ -105,6 +98,8 @@
             ccmd = 3
          ELSEIF (cmdbuffer == "-o") THEN ! reads the parameters
             ccmd = 4
+         ELSEIF (cmdbuffer == "-S") THEN ! reads the socket prefix
+            ccmd = 5
          ELSEIF (cmdbuffer == "-v") THEN ! flag for verbose standard output
             verbose = 1
          ELSEIF (cmdbuffer == "-vv") THEN ! flag for verbose standard output
@@ -124,15 +119,13 @@
                   WRITE(*,*) "Running potential type ", trim(cmdbuffer)
                ENDIF
                ! choose the PIP potential
-               IF (trim(cmdbuffer) == "q-aqua-pol") THEN
+               IF (trim(cmdbuffer) == "ch5p") THEN
                   vstyle = 1
-               ELSEIF (trim(cmdbuffer) == "oxalate") THEN
-                  vstyle = 2
                ELSEIF (trim(cmdbuffer) == "dummy") THEN
                   vstyle = 99 ! returns non-zero but otherwise meaningless values
                ELSE
                   WRITE(*,*) " Unrecognized potential type ", trim(cmdbuffer)
-                  WRITE(*,*) " Use -m [dummy|q-aqua-pol] "
+                  WRITE(*,*) " Use -m [dummy|ch5p] "
                   STOP "ENDED"
                ENDIF
             ELSEIF (ccmd == 4) THEN
@@ -172,19 +165,10 @@
          isinit = .true.         
       ELSEIF (1 == vstyle) THEN
          IF (par_count /= 0) THEN
-            WRITE(*,*) "Error: no initialization string needed."
+            WRITE(*,*) "Error: no additional parameters needed."
             STOP "ENDED"
          ENDIF
-         natm = 768
-         nw = natm/3
-         call pes_init(nw) 
-         isinit = .true.
-      ELSEIF (2 == vstyle) THEN
-         IF (par_count /= 0) THEN
-            WRITE(*,*) "Error: no initialization string needed."
-            STOP "ENDED"
-         ENDIF
-         call oxa_init()
+         call pes_init()
          isinit = .true.
       ENDIF
 
@@ -282,14 +266,8 @@
                virial = virial - 0.5
                call random_number(dip)
                dip = dip - 0.5
-            ELSEIF (vstyle == 1) THEN ! q-AQUA-pol potential
-               box = 0.d0 
-               box(1) = cell_h(1,1)
-               box(2) = cell_h(2,2)
-               box(3) = cell_h(3,3)
-               call fg_all(atoms, pot, forces, virial, box)
-            ELSEIF (vstyle == 2) THEN
-               call oxa_ef(atoms, pot, forces)
+            ELSEIF (vstyle == 1) THEN
+               call calc_ef(atoms, pot, forces)
             ENDIF
             hasdata = .true. ! Signal that we have data ready to be passed back to the wrapper
          ELSEIF (trim(header) == "GETFORCE") THEN  ! The driver calculation is finished, it's time to send the results back to the wrapper
@@ -339,7 +317,6 @@
          WRITE(*,*) "         -o 'comma_separated_parameters' [-S sockets_prefix] [-v] "
          WRITE(*,*) ""
          WRITE(*,*) " For dummy, use the optional -o sleep_seconds to add a delay"
-         WRITE(*,*) " For q-AQUA-pol, no options are needed "
        END SUBROUTINE helpmessage
 
    END PROGRAM
