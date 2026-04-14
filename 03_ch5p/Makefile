@@ -55,4 +55,4 @@ install: ipi-interface.x
 	$(FC) $(FFLAGS) -c $< -o $@
 
 clean:
-	rm -f *.o *.mod *.x */*.mod */*.o ../../bin/i-pi-driver
+	rm -f *.o *.mod *.x */*.mod */*.o $(IPI_ROOT)/bin/i-pi-driver
