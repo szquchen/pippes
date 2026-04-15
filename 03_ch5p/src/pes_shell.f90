@@ -3,7 +3,7 @@ module pes_shell
   implicit none
 
   real::coef(849)
-  character(len=90)::coef_path='/home/quchen/Bowman/projects/pippes/03_ch5p/coeff'
+  character(len=90)::coef_path='./coeff'
 
   ! Define the mass of different atoms
   real,parameter::c_mass= 12.0000000  !21874.66

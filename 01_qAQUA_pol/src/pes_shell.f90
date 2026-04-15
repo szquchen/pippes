@@ -14,7 +14,7 @@ module pes_shell
   ! 4b: fully purified, grouped basis, 200 coefs
 
   ! coefs of 2b, 3b, 4b
-  character(len=90)::coef_path="/home/quchen/Bowman/projects/pippes/01_qAQUA_pol/coeff"
+  character(len=90)::coef_path="./coeff"
   real::coef2(15016)
   real::coef3_1(13230),coef3_2(13230)
   real::coef4(200)

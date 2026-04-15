@@ -5,7 +5,7 @@ use bemsa421
 implicit none
 
   real::oxa_coeff(9923) ! number of coefficients
-  character(len=90)::coef_path='/home/quchen/Bowman/projects/pippes/02_oxalate/coeff'
+  character(len=90)::coef_path='./coeff'
 
 contains
   !==================================!
