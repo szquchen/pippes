@@ -27,7 +27,7 @@
 ! the ideal gas (i.e. no interaction at all)
 
       PROGRAM DRIVER
-         USE oxa_shell
+         USE pes_shell
          USE DISTANCE, only: CELL_VOLUME
          USE F90SOCKETS, ONLY : open_socket, writebuffer, readbuffer, f_sleep
       IMPLICIT NONE

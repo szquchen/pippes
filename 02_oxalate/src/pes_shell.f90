@@ -1,4 +1,4 @@
-module oxa_shell
+module pes_shell
 use constants
 use morse
 use bemsa421
@@ -69,4 +69,4 @@ contains
     return
   end subroutine
 
-end module oxa_shell
+end module pes_shell
