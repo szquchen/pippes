@@ -1,2 +1,1 @@
-This is the PIP potential for N-methylacetamide, based on Delta-Machine Learning.
-
+This is the PIP potential for N-methyl acetamide, and it covers both the trans and cis isomer. This potential is Delta-machine-learned to CCSD(T) level [J. Chem. Phys. 154, 051102 (2021)], using a Low-level DFT/B3LYP PES [reported in J. Chem. Phys. 151, 084306 (2019)], and a PIP fit to the difference between CCSD(T) and DFT.

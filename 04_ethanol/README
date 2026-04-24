@@ -1,0 +1,3 @@
+This is the PIP potential for ethanol, desribed in J. Chem. Theory Comput. 2022, 18, 9, 5527–5538.
+
+It is Delta-machine-learned to CCSD(T) level, using a Low-level DFT/B3LYP PES, and a PIP fit to the difference between CCSD(T) and DFT.

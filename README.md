@@ -26,5 +26,9 @@ See below for the options available.
 
 * CH<sub>5</sub><sup>+</sup>: use option `-m ch5p`.
 
+* Ethanol: use option `-m ethanol`.
+
+* N-methylacetamide: use option `-m NMA`.
+
 ## Example Inputs
 Example i-PI input files for short MD simulations and/or harmonic frequency analysis and initial geometries are provided in `examples`.

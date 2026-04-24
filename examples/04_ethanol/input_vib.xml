@@ -14,7 +14,7 @@
   </ffsocket>
   <system>
     <initialize nbeads='1'>
-      <file mode='xyz' units='angstrom'> trans.opt </file>
+      <file mode='xyz' units='angstrom'> Ethanol_trans.opt </file>
       <cell mode="abc"> [ 1000.0, 1000.0, 1000.0 ] </cell>
     </initialize>
     <forces>

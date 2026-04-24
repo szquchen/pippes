@@ -1,2 +1,2 @@
-This is the PIP potential for CH5+, described in Mol. Phys. XXX
-It is a refit to the original data reported in XXX and includes an efficient reverse derivative routine to compute the forces.
+This is the PIP potential for CH5+, described in "Diffusion Monte Carlo and PIMD calculations of radial distribution functions using an updated CCSD(T) potential for CH5+. Molecular Physics, 2024, 122(7–8). https://doi.org/10.1080/00268976.2023.2262058"
+It is a refit to the original data reported in J. Phys. Chem. A. 2006, 110, 1569–1574 (doi:10.1021/jp053848o) and includes an efficient reverse derivative routine to compute the forces.
