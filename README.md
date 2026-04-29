@@ -30,5 +30,7 @@ See below for the options available.
 
 * N-methylacetamide: use option `-m NMA`.
 
+* Aspirin (to be done):
+
 ## Example Inputs
 Example i-PI input files for short MD simulations and/or harmonic frequency analysis and initial geometries are provided in `examples`.
