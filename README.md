@@ -1,5 +1,5 @@
 # PIP PES
-A collection of Permutationally Invariant Polynomial Potential Energy Surfaces written in Fortran and interfaced with i-PI. This collection will be regularly expanded and updated. Virtually all are at the CCSD(T) level and for single gas-phase molecules, unless stated explicitly.
+A collection of Permutationally Invariant Polynomial Potential Energy Surfaces written in Fortran with some interfaced with i-PI. This collection will be regularly expanded and updated. Virtually all are at the CCSD(T) level and for single gas-phase molecules, unless stated explicitly. A separate collection of PIP PESs, not yet interfaced with i-PI is included at the end.
 
 ## Installation
 (1) Install i-PI and set up the `IPI_ROOT` environment variable by running the `env.sh` script in i-PI.
