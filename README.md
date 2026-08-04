@@ -1,5 +1,5 @@
 # PIP PES
-A collection of Permutationally Invariant Polynomial Potential Energy Surfaces written in Fortran and interfaced with i-PI, unless indicated as (to be done). This collection will be regularly expanded and updated. Virtually all are at the CCSD(T) level and for single gas-phase molecules, unless stated explicitly. 
+A collection of Permutationally Invariant Polynomial Potential Energy Surfaces written in Fortran and interfaced with i-PI, unless indicated as "standalone" (which can be found in the folder `standalone`. This collection will be regularly expanded and updated. Virtually all are at the CCSD(T) level and for single gas-phase molecules, unless stated explicitly. 
 
 ## Installation
 (1) Install i-PI and set up the `IPI_ROOT` environment variable by running the `env.sh` script in i-PI.
@@ -30,9 +30,7 @@ See below for the options available.
 
 * N-methylacetamide: use option `-m NMA`.
 
-* Aspirin (to be done):
-
-* Hydrated proton and dipole moment surface (to be done). 
+* Hydrated proton and dipole moment surface (standalone). 
 
 ## Example Inputs
 Example i-PI input files for short MD simulations and/or harmonic frequency analysis and initial geometries are provided in `examples`.
