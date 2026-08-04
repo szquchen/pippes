@@ -1,0 +1,16 @@
+This is the potential for aspirin, described in J. Chem. Theory Comput. (2024) 20: 3008-3018
+(https://doi.org/10.1021/acs.jctc.4c00054). Specifically, the fit labeled as "PES4"
+
+The folder `coeff` contains the fitting coefficients.
+
+`bemsa_aspirin.f90` contains the permutationally invariant polynomials for this molecule. This
+file may take a long time to compile.
+
+`pes_shell.f90` contains essential functions and subroutines to call this potential.
+
+An example `testpot.f90` is given to show how to initialize and then call the PES to calculate
+the potential energy and gradient, using Cartesian coordinate as input
+
+To compile, modify the Makefile and use it to compile the program. To run the test,
+./testpot.x GMgeom.xyz
+The output is written to GMgeom.out
