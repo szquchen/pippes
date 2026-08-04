@@ -30,9 +30,9 @@ See below for the options available.
 
 * N-methylacetamide: use option `-m NMA`
 
-* Aspirin (standalone)
+* Aspirin (standalone, PBE level of theory)
 
-* Hydrated proton and dipole moment surface (standalone)
+* Hydrated proton and dipole moment surface (standalone, many-body potential)
 
 ## Example Inputs
 Example i-PI input files for short MD simulations and/or harmonic frequency analysis and initial geometries are provided in `examples`.
