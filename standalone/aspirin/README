@@ -1,5 +1,7 @@
 This is the potential for aspirin, described in J. Chem. Theory Comput. (2024) 20: 3008-3018
 (https://doi.org/10.1021/acs.jctc.4c00054). Specifically, the fit labeled as "PES4"
+The fit is based on rMD17 dataset (Mach. Learn.: Sci. Technol. (2020) 1: 045018,
+DOI 10.1088/2632-2153/abba6f), computed at PBE/def2-SVP level of theory.
 
 The folder `coeff` contains the fitting coefficients.
 
