@@ -1,0 +1,43 @@
+There are three main folders:
+(1) folder "coef" includes all coefficients for H3O+ PES/DMS, dissociable H5O2+ PES/DMS, WHBB water PES/DMS,H-W-W 3b interaction,H-W-W-W 4b simple fit
+
+(2) folder "lib" includes all compiled library files
+
+(3) folder "PES" provides an example for compiling codes and calculating potential, dipole moment
+
+To run the code:
+
+(I) go to "PES" folder
+
+(II) Check "Makefile" to make sure you are using effective fortran compiler (we use ifort in this case)
+The PES/DMS is involved in different parts (H3O+ PES/DMS, dissociable H5O2+ PES/DMS, WHBB water PES/DMS), all these
+separately parts are combined through "pes_shell_wt.f90" file. 
+
+(III) compile the codes through "make getpot"
+
+(IV) run the test code "./getpot"
+
+In this test, the potential and dipole moment of H9O4+ minimum geometry will be calculated and printed on screen. 
+The input "h9o3.xyz" has coordinates in angstrom, the supposed energy and dipole moment should be:
+ Total potential energy  =  -0.12229631241536576       Hartree
+ Dipole moment  =   -4.1028494919725675      -0.29939082158157881        1.3233144158222685       Hartree
+
+
+There is another test file "h7o3.xyz", the minimum geometry of H7O3+. You can change the file name and number of atoms in getpot.f90. Then recompile and run the code.
+
+
+Note:
+   1. When compiling all the PES code by yourself, there is one step in compiling bemsa.f90 program which takes a lot of time, just be patient :). 
+
+   2. In this code, we calculate the potential/dipole of different possible monomer assignments (Mainly involving hydronium core and first hydration shell). Thus the code may run 2-4 times slower than usual and we recommend some parallel program in calculating the potential especially in DMC calcualtion (that is what I do in DMC test). 
+    
+   3. I have tested the PES/DMS in Path Integral Molecular Dynamics of H7O3+,H9O4+. Thus, this PES should work for MD simulations. But still be careful during calculations.
+
+
+
+For reference, please refer to:
+(1) Q.Yu, J.M.Bowman, J. Chem. Phys. 146, 121102, 2017
+(2) Q.Yu, J.M.Bowman, J. Am. Chem. Soc. 139(32),10984,2017
+(3) J.P.Heindel, Q.Yu, J.M.Bowman and S.S.Xantheas, J. Chem. Theory Comput. 14, 9, 4553,2018
+   
+Any questions, contact qyu28@emory.edu

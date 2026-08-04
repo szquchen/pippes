@@ -1,0 +1,82 @@
+> Attach("Magma/pack.m");
+> _:=MolInvRngBG(4,2,9);
+Group degree and order: 8 48
+Degrees of Primaries:
+[ 1, 2, 2, 2, 3, 4, 4, 6 ]
+Number of primaries at each degree, and sums:
+[ 0, 1, 3, 1, 2, 0, 1, 0, 0, 0 ]
+[ 0, 1, 4, 5, 7, 7, 8, 8, 8, 8 ]
+Dimensions of the Primaries Ring:
+[ 1, 1, 4, 5, 13, 16, 34, 42, 78, 96 ]
+[ 1, 2, 6, 11, 24, 40, 74, 116, 194, 290 ]
+Expected Numbers of Secondaries, from Degree 0:
+[ 1, 0, 0, 2, 4, 4, 4, 6, 6, 6 ]
+[ 1, 1, 1, 3, 7, 11, 15, 21, 27, 33 ]
+Molien/Hilbert Series from Degree 0, and sums:
+[ 1, 1, 4, 7, 19, 32, 68, 114, 210, 336 ]
+[ 1, 2, 6, 13, 32, 64, 132, 246, 456, 792 ]
+ v(0) = 1
+Time: 0.000
+Time: 0.010
+Time: 0.000
+Time: 0.000
+Time: 0.000
+Time: 0.000
+Time: 0.000
+Time: 0.010
+Time: 0.000
+ pv(0) = SYM d(i0,j0)^3
+ pv(1) = SYM d(i0,j0)^2*d(i1,j0)
+ v(1:2) = pv(0:1)
+Time: 0.010
+Time: 0.000
+Time: 0.030
+ pv(2) = SYM d(i0,j0)^3*d(i1,j0)
+ pv(3) = SYM d(i0,j0)^2*d(i1,j0)^2
+ pv(4) = SYM d(i0,j0)^3*d(i0,j1)
+ pv(5) = SYM d(i0,j0)^2*d(i1,j0)*d(i0,j1)
+ v(3:6) = pv(2:5)
+Time: 0.000
+Time: 0.020
+Time: 0.130
+ pv(6) = SYM d(i0,j0)^5
+ pv(7) = SYM d(i0,j0)^4*d(i1,j0)
+ pv(8) = SYM d(i0,j0)^4*d(i0,j1)
+ pv(9) = SYM d(i0,j0)^3*d(i1,j0)*d(i0,j1)
+ v(7:10) = pv(6:9)
+Time: 0.650
+ v(11) = pv(0)*pv(1)
+ v(12) = pv(1)*pv(1)
+Time: 0.040
+Time: 0.570
+ pv(10) = SYM d(i0,j0)^4*d(i1,j0)^2
+ pv(11) = SYM d(i0,j0)^5*d(i0,j1)
+ v(13:14) = pv(10:11)
+Time: 3.340
+ v(15) = pv(0)*pv(3)
+ v(16) = pv(1)*pv(3)
+ v(17) = pv(1)*pv(4)
+ v(18) = pv(0)*pv(5)
+ v(19) = pv(1)*pv(5)
+Time: 0.090
+Time: 2.510
+ pv(12) = SYM d(i0,j0)^7
+ v(20:20) = pv(12:12)
+Time: 25.450
+ v(21) = pv(3)*pv(5)
+ v(22) = pv(0)*pv(7)
+ v(23) = pv(1)*pv(7)
+ v(24) = pv(1)*pv(8)
+ v(25) = pv(0)*pv(9)
+ v(26) = pv(1)*pv(9)
+Time: 0.200
+Time: 11.250
+Time: 123.160
+ v(27) = pv(4)*pv(9)
+ v(28) = pv(5)*pv(9)
+ v(29) = pv(0)*pv(10)
+ v(30) = pv(1)*pv(10)
+ v(31) = pv(0)*pv(11)
+ v(32) = pv(1)*pv(11)
+Time: 0.390
+Time: 137.550

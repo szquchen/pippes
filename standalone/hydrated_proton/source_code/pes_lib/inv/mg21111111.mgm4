@@ -1,0 +1,87 @@
+> _:=MolInvRngGen([2,1,1,1,1,1,1,1],4);
+Group degree and order: 36 2
+Degrees of Primaries:
+[ 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 
+1, 1, 1, 2, 2, 2, 2, 2, 2, 2 ]
+Number of primaries at each degree, and sums:
+[ 0, 29, 7, 0, 0, 0, 0, 0, 0, 0 ]
+[ 0, 29, 36, 36, 36, 36, 36, 36, 36, 36 ]
+Dimensions of the Primaries Ring:
+[ 1, 29, 442, 4698, 39033, 269613, 1608888, 8514168, 40718298, 178504338 ]
+[ 1, 30, 472, 5170, 44203, 313816, 1922704, 10436872, 51155170, 229659508 ]
+Expected Numbers of Secondaries, from Degree 0:
+[ 1, 0, 21, 0, 35, 0, 7, 0, 0, 0 ]
+[ 1, 1, 22, 22, 57, 57, 64, 64, 64, 64 ]
+Molien/Hilbert Series from Degree 0, and sums:
+[ 1, 29, 463, 5307, 48350, 369286, 2444058, 14340674, 75874195, 366771207 ]
+[ 1, 30, 493, 5800, 54150, 423436, 2867494, 17208168, 93082363, 459853570 ]
+ v(0) = 1
+Time: 0.000
+Time: 0.000
+Time: 0.000
+Time: 0.000
+Time: 0.050
+Time: 0.190
+ pv(0) = SYM d(i0,j0)*d(i0,k0)
+ pv(1) = SYM d(i0,j0)*d(i0,l0)
+ pv(2) = SYM d(i0,k0)*d(i0,l0)
+ pv(3) = SYM d(i0,j0)*d(i0,m0)
+ pv(4) = SYM d(i0,k0)*d(i0,m0)
+ pv(5) = SYM d(i0,l0)*d(i0,m0)
+ pv(6) = SYM d(i0,j0)*d(i0,n0)
+ pv(7) = SYM d(i0,k0)*d(i0,n0)
+ pv(8) = SYM d(i0,l0)*d(i0,n0)
+ pv(9) = SYM d(i0,m0)*d(i0,n0)
+ pv(10) = SYM d(i0,j0)*d(i0,o0)
+ pv(11) = SYM d(i0,k0)*d(i0,o0)
+ pv(12) = SYM d(i0,l0)*d(i0,o0)
+ pv(13) = SYM d(i0,m0)*d(i0,o0)
+ pv(14) = SYM d(i0,n0)*d(i0,o0)
+ pv(15) = SYM d(i0,j0)*d(i0,p0)
+ pv(16) = SYM d(i0,k0)*d(i0,p0)
+ pv(17) = SYM d(i0,l0)*d(i0,p0)
+ pv(18) = SYM d(i0,m0)*d(i0,p0)
+ pv(19) = SYM d(i0,n0)*d(i0,p0)
+ pv(20) = SYM d(i0,o0)*d(i0,p0)
+ v(1:21) = pv(0:20)
+Time: 0.010
+Time: 1.640
+Time: 29.080
+Time: 11.670
+ v(22) = pv(0)*pv(5)
+ v(23) = pv(0)*pv(8)
+ v(24) = pv(0)*pv(9)
+ v(25) = pv(1)*pv(9)
+ v(26) = pv(2)*pv(9)
+ v(27) = pv(0)*pv(12)
+ v(28) = pv(0)*pv(13)
+ v(29) = pv(1)*pv(13)
+ v(30) = pv(2)*pv(13)
+ v(31) = pv(0)*pv(14)
+ v(32) = pv(1)*pv(14)
+ v(33) = pv(2)*pv(14)
+ v(34) = pv(3)*pv(14)
+ v(35) = pv(4)*pv(14)
+ v(36) = pv(5)*pv(14)
+ v(37) = pv(0)*pv(17)
+ v(38) = pv(0)*pv(18)
+ v(39) = pv(1)*pv(18)
+ v(40) = pv(2)*pv(18)
+ v(41) = pv(0)*pv(19)
+ v(42) = pv(1)*pv(19)
+ v(43) = pv(2)*pv(19)
+ v(44) = pv(3)*pv(19)
+ v(45) = pv(4)*pv(19)
+ v(46) = pv(5)*pv(19)
+ v(47) = pv(0)*pv(20)
+ v(48) = pv(1)*pv(20)
+ v(49) = pv(2)*pv(20)
+ v(50) = pv(3)*pv(20)
+ v(51) = pv(4)*pv(20)
+ v(52) = pv(5)*pv(20)
+ v(53) = pv(6)*pv(20)
+ v(54) = pv(7)*pv(20)
+ v(55) = pv(8)*pv(20)
+ v(56) = pv(9)*pv(20)
+Time: 109.950
+[Out of memory failure]

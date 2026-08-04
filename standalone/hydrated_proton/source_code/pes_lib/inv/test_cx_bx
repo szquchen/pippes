@@ -1,0 +1,8 @@
+#! /bin/sh
+m4 -U len -U index -U include -U substr \
+  -D NKI=$1 -D NKJ=$2 test_cx_bx.m4 > junk.f90
+echo "testing cx: $1, $2"
+gmake junk.exe
+./junk.exe
+\rm -f junk.exe
+exit 0

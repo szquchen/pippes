@@ -1,0 +1,10 @@
+inv_mg63.o : inv_mg63.f90 mg63_base.f90  mg63_isecs.f90  mg63_isecs6.f90 mg63_isecs5.f90 mg63_msecs.f90 mg63_prib.f90  mg63_prims.f90  mg63_secs.f90 inv_mgx.o 
+bg63_prims.o : bg63_prims.f90 
+cg3_prims.o : cg3_prims.f90 
+cg6_prims.o : cg6_prims.f90 
+inv_cx63.o : inv_cx63.f90 inv_cxx.o inv_mg63.o 
+inv_cxx.o : inv_cxx.f90 
+inv_mgx.o : inv_mgx.f90  
+inv_wp.o : inv_wp.f90 
+inv.o : inv.f90 
+bowman3b.o : libpes.a

@@ -1,0 +1,173 @@
+> Attach("Magma/pack.m");
+> _:=MolInvRngGen([3,1,1,1,1,1,1,1],3);
+Group degree and order: 45 6
+Degrees of Primaries:
+[ 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 
+1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2, 3, 3, 3, 3, 3, 3, 3, 3 ]
+Number of primaries at each degree, and sums:
+[ 0, 29, 8, 8, 0, 0, 0, 0, 0, 0 ]
+[ 0, 29, 37, 45, 45, 45, 45, 45, 45, 45 ]
+Dimensions of the Primaries Ring:
+[ 1, 29, 443, 4735, 39708, 277884, 1686216, 9105360, 44577330, 200650050 ]
+[ 1, 30, 473, 5208, 44916, 322800, 2009016, 11114376, 55691706, 256341756 ]
+Expected Numbers of Secondaries, from Degree 0:
+[ 1, 0, 28, 112, 406, 1456, 3668, 7504, 14309, 22968 ]
+[ 1, 1, 29, 141, 547, 2003, 5671, 13175, 27484, 50452 ]
+Molien/Hilbert Series from Degree 0, and sums:
+[ 1, 29, 471, 5659, 55766, 473310, 3554110, 24014702, 147786843, 836222255 ]
+[ 1, 30, 501, 6160, 61926, 535236, 4089346, 28104048, 175890891, 1012113146 ]
+ v(0) = 1
+Time: 0.000
+Time: 0.010
+Time: 0.010
+Time: 0.000
+Time: 0.020
+Time: 0.080
+ pv(0) = SYM d(i0,i1)*d(i0,j0)
+ pv(1) = SYM d(i0,i1)*d(i0,k0)
+ pv(2) = SYM d(i0,j0)*d(i0,k0)
+ pv(3) = SYM d(i0,i1)*d(i0,l0)
+ pv(4) = SYM d(i0,j0)*d(i0,l0)
+ pv(5) = SYM d(i0,k0)*d(i0,l0)
+ pv(6) = SYM d(i0,i1)*d(i0,m0)
+ pv(7) = SYM d(i0,j0)*d(i0,m0)
+ pv(8) = SYM d(i0,k0)*d(i0,m0)
+ pv(9) = SYM d(i0,l0)*d(i0,m0)
+ pv(10) = SYM d(i0,i1)*d(i0,n0)
+ pv(11) = SYM d(i0,j0)*d(i0,n0)
+ pv(12) = SYM d(i0,k0)*d(i0,n0)
+ pv(13) = SYM d(i0,l0)*d(i0,n0)
+ pv(14) = SYM d(i0,m0)*d(i0,n0)
+ pv(15) = SYM d(i0,i1)*d(i0,o0)
+ pv(16) = SYM d(i0,j0)*d(i0,o0)
+ pv(17) = SYM d(i0,k0)*d(i0,o0)
+ pv(18) = SYM d(i0,l0)*d(i0,o0)
+ pv(19) = SYM d(i0,m0)*d(i0,o0)
+ pv(20) = SYM d(i0,n0)*d(i0,o0)
+ pv(21) = SYM d(i0,i1)*d(i0,p0)
+ pv(22) = SYM d(i0,j0)*d(i0,p0)
+ pv(23) = SYM d(i0,k0)*d(i0,p0)
+ pv(24) = SYM d(i0,l0)*d(i0,p0)
+ pv(25) = SYM d(i0,m0)*d(i0,p0)
+ pv(26) = SYM d(i0,n0)*d(i0,p0)
+ pv(27) = SYM d(i0,o0)*d(i0,p0)
+ v(1:28) = pv(0:27)
+Time: 0.000
+Time: 1.080
+Time: 17.450
+ pv(28) = SYM d(i0,i1)^2*d(i0,j0)
+ pv(29) = SYM d(i0,i1)*d(i0,j0)^2
+ pv(30) = SYM d(i0,i1)^2*d(i0,k0)
+ pv(31) = SYM d(i0,i1)*d(i0,j0)*d(i0,k0)
+ pv(32) = SYM d(i0,j0)^2*d(i0,k0)
+ pv(33) = SYM d(i0,i1)*d(i0,k0)^2
+ pv(34) = SYM d(i0,j0)*d(i0,k0)^2
+ pv(35) = SYM d(i0,i1)^2*d(i0,l0)
+ pv(36) = SYM d(i0,i1)*d(i0,j0)*d(i0,l0)
+ pv(37) = SYM d(i0,j0)^2*d(i0,l0)
+ pv(38) = SYM d(i0,i1)*d(i0,k0)*d(i0,l0)
+ pv(39) = SYM d(i0,j0)*d(i0,k0)*d(i0,l0)
+ pv(40) = SYM d(i0,k0)^2*d(i0,l0)
+ pv(41) = SYM d(i0,i1)*d(i0,l0)^2
+ pv(42) = SYM d(i0,j0)*d(i0,l0)^2
+ pv(43) = SYM d(i0,k0)*d(i0,l0)^2
+ pv(44) = SYM d(i0,i1)^2*d(i0,m0)
+ pv(45) = SYM d(i0,i1)*d(i0,j0)*d(i0,m0)
+ pv(46) = SYM d(i0,j0)^2*d(i0,m0)
+ pv(47) = SYM d(i0,i1)*d(i0,k0)*d(i0,m0)
+ pv(48) = SYM d(i0,j0)*d(i0,k0)*d(i0,m0)
+ pv(49) = SYM d(i0,k0)^2*d(i0,m0)
+ pv(50) = SYM d(i0,i1)*d(i0,l0)*d(i0,m0)
+ pv(51) = SYM d(i0,j0)*d(i0,l0)*d(i0,m0)
+ pv(52) = SYM d(i0,k0)*d(i0,l0)*d(i0,m0)
+ pv(53) = SYM d(i0,l0)^2*d(i0,m0)
+ pv(54) = SYM d(i0,i1)*d(i0,m0)^2
+ pv(55) = SYM d(i0,j0)*d(i0,m0)^2
+ pv(56) = SYM d(i0,k0)*d(i0,m0)^2
+ pv(57) = SYM d(i0,l0)*d(i0,m0)^2
+ pv(58) = SYM d(i0,i1)^2*d(i0,n0)
+ pv(59) = SYM d(i0,i1)*d(i0,j0)*d(i0,n0)
+ pv(60) = SYM d(i0,j0)^2*d(i0,n0)
+ pv(61) = SYM d(i0,i1)*d(i0,k0)*d(i0,n0)
+ pv(62) = SYM d(i0,j0)*d(i0,k0)*d(i0,n0)
+ pv(63) = SYM d(i0,k0)^2*d(i0,n0)
+ pv(64) = SYM d(i0,i1)*d(i0,l0)*d(i0,n0)
+ pv(65) = SYM d(i0,j0)*d(i0,l0)*d(i0,n0)
+ pv(66) = SYM d(i0,k0)*d(i0,l0)*d(i0,n0)
+ pv(67) = SYM d(i0,l0)^2*d(i0,n0)
+ pv(68) = SYM d(i0,i1)*d(i0,m0)*d(i0,n0)
+ pv(69) = SYM d(i0,j0)*d(i0,m0)*d(i0,n0)
+ pv(70) = SYM d(i0,k0)*d(i0,m0)*d(i0,n0)
+ pv(71) = SYM d(i0,l0)*d(i0,m0)*d(i0,n0)
+ pv(72) = SYM d(i0,m0)^2*d(i0,n0)
+ pv(73) = SYM d(i0,i1)*d(i0,n0)^2
+ pv(74) = SYM d(i0,j0)*d(i0,n0)^2
+ pv(75) = SYM d(i0,k0)*d(i0,n0)^2
+ pv(76) = SYM d(i0,l0)*d(i0,n0)^2
+ pv(77) = SYM d(i0,m0)*d(i0,n0)^2
+ pv(78) = SYM d(i0,i1)^2*d(i0,o0)
+ pv(79) = SYM d(i0,i1)*d(i0,j0)*d(i0,o0)
+ pv(80) = SYM d(i0,j0)^2*d(i0,o0)
+ pv(81) = SYM d(i0,i1)*d(i0,k0)*d(i0,o0)
+ pv(82) = SYM d(i0,j0)*d(i0,k0)*d(i0,o0)
+ pv(83) = SYM d(i0,k0)^2*d(i0,o0)
+ pv(84) = SYM d(i0,i1)*d(i0,l0)*d(i0,o0)
+ pv(85) = SYM d(i0,j0)*d(i0,l0)*d(i0,o0)
+ pv(86) = SYM d(i0,k0)*d(i0,l0)*d(i0,o0)
+ pv(87) = SYM d(i0,l0)^2*d(i0,o0)
+ pv(88) = SYM d(i0,i1)*d(i0,m0)*d(i0,o0)
+ pv(89) = SYM d(i0,j0)*d(i0,m0)*d(i0,o0)
+ pv(90) = SYM d(i0,k0)*d(i0,m0)*d(i0,o0)
+ pv(91) = SYM d(i0,l0)*d(i0,m0)*d(i0,o0)
+ pv(92) = SYM d(i0,m0)^2*d(i0,o0)
+ pv(93) = SYM d(i0,i1)*d(i0,n0)*d(i0,o0)
+ pv(94) = SYM d(i0,j0)*d(i0,n0)*d(i0,o0)
+ pv(95) = SYM d(i0,k0)*d(i0,n0)*d(i0,o0)
+ pv(96) = SYM d(i0,l0)*d(i0,n0)*d(i0,o0)
+ pv(97) = SYM d(i0,m0)*d(i0,n0)*d(i0,o0)
+ pv(98) = SYM d(i0,n0)^2*d(i0,o0)
+ pv(99) = SYM d(i0,i1)*d(i0,o0)^2
+ pv(100) = SYM d(i0,j0)*d(i0,o0)^2
+ pv(101) = SYM d(i0,k0)*d(i0,o0)^2
+ pv(102) = SYM d(i0,l0)*d(i0,o0)^2
+ pv(103) = SYM d(i0,m0)*d(i0,o0)^2
+ pv(104) = SYM d(i0,n0)*d(i0,o0)^2
+ pv(105) = SYM d(i0,i1)^2*d(i0,p0)
+ pv(106) = SYM d(i0,i1)*d(i0,j0)*d(i0,p0)
+ pv(107) = SYM d(i0,j0)^2*d(i0,p0)
+ pv(108) = SYM d(i0,i1)*d(i0,k0)*d(i0,p0)
+ pv(109) = SYM d(i0,j0)*d(i0,k0)*d(i0,p0)
+ pv(110) = SYM d(i0,k0)^2*d(i0,p0)
+ pv(111) = SYM d(i0,i1)*d(i0,l0)*d(i0,p0)
+ pv(112) = SYM d(i0,j0)*d(i0,l0)*d(i0,p0)
+ pv(113) = SYM d(i0,k0)*d(i0,l0)*d(i0,p0)
+ pv(114) = SYM d(i0,l0)^2*d(i0,p0)
+ pv(115) = SYM d(i0,i1)*d(i0,m0)*d(i0,p0)
+ pv(116) = SYM d(i0,j0)*d(i0,m0)*d(i0,p0)
+ pv(117) = SYM d(i0,k0)*d(i0,m0)*d(i0,p0)
+ pv(118) = SYM d(i0,l0)*d(i0,m0)*d(i0,p0)
+ pv(119) = SYM d(i0,m0)^2*d(i0,p0)
+ pv(120) = SYM d(i0,i1)*d(i0,n0)*d(i0,p0)
+ pv(121) = SYM d(i0,j0)*d(i0,n0)*d(i0,p0)
+ pv(122) = SYM d(i0,k0)*d(i0,n0)*d(i0,p0)
+ pv(123) = SYM d(i0,l0)*d(i0,n0)*d(i0,p0)
+ pv(124) = SYM d(i0,m0)*d(i0,n0)*d(i0,p0)
+ pv(125) = SYM d(i0,n0)^2*d(i0,p0)
+ pv(126) = SYM d(i0,i1)*d(i0,o0)*d(i0,p0)
+ pv(127) = SYM d(i0,j0)*d(i0,o0)*d(i0,p0)
+ pv(128) = SYM d(i0,k0)*d(i0,o0)*d(i0,p0)
+ pv(129) = SYM d(i0,l0)*d(i0,o0)*d(i0,p0)
+ pv(130) = SYM d(i0,m0)*d(i0,o0)*d(i0,p0)
+ pv(131) = SYM d(i0,n0)*d(i0,o0)*d(i0,p0)
+ pv(132) = SYM d(i0,o0)^2*d(i0,p0)
+ pv(133) = SYM d(i0,i1)*d(i0,p0)^2
+ pv(134) = SYM d(i0,j0)*d(i0,p0)^2
+ pv(135) = SYM d(i0,k0)*d(i0,p0)^2
+ pv(136) = SYM d(i0,l0)*d(i0,p0)^2
+ pv(137) = SYM d(i0,m0)*d(i0,p0)^2
+ pv(138) = SYM d(i0,n0)*d(i0,p0)^2
+ pv(139) = SYM d(i0,o0)*d(i0,p0)^2
+ v(29:140) = pv(28:139)
+> quit;
+
+Total time: 19.579 seconds, Total memory usage: 509.11MB

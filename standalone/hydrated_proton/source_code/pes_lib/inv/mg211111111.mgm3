@@ -1,0 +1,60 @@
+> Attach("Magma/pack.m");
+> _:=MolInvRngGen([2,1,1,1,1,1,1,1,1],3);
+Group degree and order: 45 2
+Degrees of Primaries:
+[ 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 
+1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2 ]
+Number of primaries at each degree, and sums:
+[ 0, 37, 8, 0, 0, 0, 0, 0, 0, 0 ]
+[ 0, 37, 45, 45, 45, 45, 45, 45, 45, 45 ]
+Dimensions of the Primaries Ring:
+[ 1, 37, 711, 9435, 97050, 823842, 6002334, 38552742, 222573645, 1172043265 ]
+[ 1, 38, 749, 10184, 107234, 931076, 6933410, 45486152, 268059797, 1440103062 ]
+Expected Numbers of Secondaries, from Degree 0:
+[ 1, 0, 28, 0, 70, 0, 28, 0, 1, 0 ]
+[ 1, 1, 29, 29, 99, 99, 127, 127, 128, 128 ]
+Molien/Hilbert Series from Degree 0, and sums:
+[ 1, 37, 739, 10471, 117028, 1090612, 8769532, 62281804, 397452406, 2309453198 ]
+[ 1, 38, 777, 11248, 128276, 1218888, 9988420, 72270224, 469722630, 2779175828 ]
+ v(0) = 1
+Time: 0.000
+Time: 0.010
+Time: 0.000
+Time: 0.000
+Time: 0.030
+Time: 0.190
+ pv(0) = SYM d(i0,j0)*d(i0,k0)
+ pv(1) = SYM d(i0,j0)*d(i0,l0)
+ pv(2) = SYM d(i0,k0)*d(i0,l0)
+ pv(3) = SYM d(i0,j0)*d(i0,m0)
+ pv(4) = SYM d(i0,k0)*d(i0,m0)
+ pv(5) = SYM d(i0,l0)*d(i0,m0)
+ pv(6) = SYM d(i0,j0)*d(i0,n0)
+ pv(7) = SYM d(i0,k0)*d(i0,n0)
+ pv(8) = SYM d(i0,l0)*d(i0,n0)
+ pv(9) = SYM d(i0,m0)*d(i0,n0)
+ pv(10) = SYM d(i0,j0)*d(i0,o0)
+ pv(11) = SYM d(i0,k0)*d(i0,o0)
+ pv(12) = SYM d(i0,l0)*d(i0,o0)
+ pv(13) = SYM d(i0,m0)*d(i0,o0)
+ pv(14) = SYM d(i0,n0)*d(i0,o0)
+ pv(15) = SYM d(i0,j0)*d(i0,p0)
+ pv(16) = SYM d(i0,k0)*d(i0,p0)
+ pv(17) = SYM d(i0,l0)*d(i0,p0)
+ pv(18) = SYM d(i0,m0)*d(i0,p0)
+ pv(19) = SYM d(i0,n0)*d(i0,p0)
+ pv(20) = SYM d(i0,o0)*d(i0,p0)
+ pv(21) = SYM d(i0,j0)*d(i0,q0)
+ pv(22) = SYM d(i0,k0)*d(i0,q0)
+ pv(23) = SYM d(i0,l0)*d(i0,q0)
+ pv(24) = SYM d(i0,m0)*d(i0,q0)
+ pv(25) = SYM d(i0,n0)*d(i0,q0)
+ pv(26) = SYM d(i0,o0)*d(i0,q0)
+ pv(27) = SYM d(i0,p0)*d(i0,q0)
+ v(1:28) = pv(0:27)
+Time: 0.000
+Time: 1.810
+Time: 68.200
+> quit;
+
+Total time: 71.229 seconds, Total memory usage: 1694.30MB

@@ -1,0 +1,46 @@
+> _:=MolInvRngBG(2,2,9);
+Group degree and order: 4 4
+Degrees of Primaries:
+[ 1, 2, 2, 2 ]
+Number of primaries at each degree, and sums:
+[ 0, 1, 3, 0, 0, 0, 0, 0, 0, 0 ]
+[ 0, 1, 4, 4, 4, 4, 4, 4, 4, 4 ]
+Dimensions of the Primaries Ring:
+[ 1, 1, 4, 4, 10, 10, 20, 20, 35, 35 ]
+[ 1, 2, 6, 10, 20, 30, 50, 70, 105, 140 ]
+Expected Numbers of Secondaries, from Degree 0:
+[ 1, 0, 0, 1, 0, 0, 0, 0, 0, 0 ]
+[ 1, 1, 1, 2, 2, 2, 2, 2, 2, 2 ]
+Molien/Hilbert Series from Degree 0, and sums:
+[ 1, 1, 4, 5, 11, 14, 24, 30, 45, 55 ]
+[ 1, 2, 6, 11, 22, 36, 60, 90, 135, 190 ]
+ v(0) = 1
+Time: 0.000
+Time: 0.010
+Time: 0.000
+Time: 0.000
+Time: 0.000
+Time: 0.000
+Time: 0.000
+Time: 0.000
+Time: 0.000
+ pv(0) = SYM d(i0,j0)^3
+ v(1:1) = pv(0:0)
+Time: 0.000
+Time: 0.000
+Time: 0.010
+Time: 0.000
+Time: 0.000
+Time: 0.010
+Time: 0.020
+Time: 0.010
+Time: 0.030
+Time: 0.000
+Time: 0.000
+Time: 0.090
+Time: 0.000
+Time: 0.010
+Time: 0.200
+Time: 0.000
+Time: 0.000
+Time: 0.420

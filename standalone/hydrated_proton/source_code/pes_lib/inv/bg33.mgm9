@@ -1,0 +1,137 @@
+> Attach("Magma/pack.m");
+> _:=MolInvRngBG(3,3,9);
+Group degree and order: 9 36
+Degrees of Primaries:
+[ 1, 2, 2, 2, 3, 3, 3, 4, 6 ]
+Number of primaries at each degree, and sums:
+[ 0, 1, 3, 3, 1, 0, 1, 0, 0, 0 ]
+[ 0, 1, 4, 7, 8, 8, 9, 9, 9, 9 ]
+Dimensions of the Primaries Ring:
+[ 1, 1, 4, 7, 14, 23, 43, 64, 107, 159 ]
+[ 1, 2, 6, 13, 27, 50, 93, 157, 264, 423 ]
+Expected Numbers of Secondaries, from Degree 0:
+[ 1, 0, 0, 3, 7, 9, 13, 15, 20, 22 ]
+[ 1, 1, 1, 4, 11, 20, 33, 48, 68, 90 ]
+Molien/Hilbert Series from Degree 0, and sums:
+[ 1, 1, 4, 10, 24, 51, 114, 219, 424, 768 ]
+[ 1, 2, 6, 16, 40, 91, 205, 424, 848, 1616 ]
+ v(0) = 1
+Time: 0.000
+Time: 0.000
+Time: 0.000
+Time: 0.000
+Time: 0.000
+Time: 0.000
+Time: 0.000
+Time: 0.000
+Time: 0.010
+ pv(0) = SYM d(i0,j0)^2*d(i1,j0)
+ pv(1) = SYM d(i0,j0)^2*d(i0,j1)
+ pv(2) = SYM d(i0,j0)*d(i1,j0)*d(i0,j1)
+ v(1:3) = pv(0:2)
+Time: 0.000
+Time: 0.020
+Time: 0.050
+ pv(3) = SYM d(i0,j0)^3*d(i1,j0)
+ pv(4) = SYM d(i0,j0)^2*d(i1,j0)^2
+ pv(5) = SYM d(i0,j0)^3*d(i0,j1)
+ pv(6) = SYM d(i0,j0)^2*d(i1,j0)*d(i0,j1)
+ pv(7) = SYM d(i0,j0)*d(i1,j0)^2*d(i0,j1)
+ pv(8) = SYM d(i0,j0)^2*d(i0,j1)^2
+ pv(9) = SYM d(i0,j0)*d(i1,j0)*d(i0,j1)^2
+ v(4:10) = pv(3:9)
+Time: 0.000
+Time: 0.040
+Time: 0.300
+ pv(10) = SYM d(i0,j0)^5
+ pv(11) = SYM d(i0,j0)^4*d(i1,j0)
+ pv(12) = SYM d(i0,j0)^3*d(i1,j0)^2
+ pv(13) = SYM d(i0,j0)^4*d(i0,j1)
+ pv(14) = SYM d(i0,j0)^3*d(i1,j0)*d(i0,j1)
+ pv(15) = SYM d(i0,j0)^2*d(i1,j0)^2*d(i0,j1)
+ pv(16) = SYM d(i0,j0)*d(i1,j0)^3*d(i0,j1)
+ pv(17) = SYM d(i0,j0)^3*d(i0,j1)^2
+ pv(18) = SYM d(i0,j0)^2*d(i1,j0)*d(i0,j1)^2
+ v(11:19) = pv(10:18)
+Time: 1.840
+ v(20) = pv(0)*pv(0)
+ v(21) = pv(0)*pv(1)
+ v(22) = pv(1)*pv(1)
+ v(23) = pv(0)*pv(2)
+ v(24) = pv(1)*pv(2)
+ v(25) = pv(2)*pv(2)
+Time: 0.110
+Time: 1.440
+ pv(19) = SYM d(i0,j0)^5*d(i1,j0)
+ pv(20) = SYM d(i0,j0)^4*d(i1,j0)^2
+ pv(21) = SYM d(i0,j0)^5*d(i0,j1)
+ pv(22) = SYM d(i0,j0)^4*d(i1,j0)*d(i0,j1)
+ pv(23) = SYM d(i0,j0)^3*d(i1,j0)^2*d(i0,j1)
+ pv(24) = SYM d(i0,j0)^2*d(i1,j0)^3*d(i0,j1)
+ pv(25) = SYM d(i0,j0)^4*d(i0,j1)^2
+ v(26:32) = pv(19:25)
+Time: 13.800
+ v(33) = pv(2)*pv(5)
+ v(34) = pv(0)*pv(6)
+ v(35) = pv(1)*pv(6)
+ v(36) = pv(2)*pv(6)
+ v(37) = pv(0)*pv(7)
+ v(38) = pv(1)*pv(7)
+ v(39) = pv(2)*pv(7)
+ v(40) = pv(0)*pv(8)
+ v(41) = pv(1)*pv(8)
+ v(42) = pv(2)*pv(8)
+ v(43) = pv(0)*pv(9)
+ v(44) = pv(1)*pv(9)
+ v(45) = pv(2)*pv(9)
+Time: 0.250
+Time: 8.280
+ pv(26) = SYM d(i0,j0)^7
+ pv(27) = SYM d(i0,j0)^6*d(i1,j0)
+ v(46:47) = pv(26:27)
+Time: 249.790
+ v(48) = pv(8)*pv(9)
+ v(49) = pv(9)*pv(9)
+ v(50) = pv(0)*pv(13)
+ v(51) = pv(1)*pv(13)
+ v(52) = pv(2)*pv(13)
+ v(53) = pv(0)*pv(14)
+ v(54) = pv(1)*pv(14)
+ v(55) = pv(2)*pv(14)
+ v(56) = pv(0)*pv(15)
+ v(57) = pv(1)*pv(15)
+ v(58) = pv(2)*pv(15)
+ v(59) = pv(0)*pv(16)
+ v(60) = pv(1)*pv(16)
+ v(61) = pv(2)*pv(16)
+ v(62) = pv(0)*pv(17)
+ v(63) = pv(1)*pv(17)
+ v(64) = pv(2)*pv(17)
+ v(65) = pv(0)*pv(18)
+ v(66) = pv(1)*pv(18)
+ v(67) = pv(2)*pv(18)
+Time: 0.590
+Time: 85.880
+Time: 5896.640
+ v(68) = pv(7)*pv(18)
+ v(69) = pv(8)*pv(18)
+ v(70) = pv(9)*pv(18)
+ v(71) = pv(1)*pv(19)
+ v(72) = pv(2)*pv(19)
+ v(73) = pv(0)*pv(20)
+ v(74) = pv(1)*pv(20)
+ v(75) = pv(2)*pv(20)
+ v(76) = pv(0)*pv(21)
+ v(77) = pv(2)*pv(21)
+ v(78) = pv(0)*pv(22)
+ v(79) = pv(1)*pv(22)
+ v(80) = pv(2)*pv(22)
+ v(81) = pv(0)*pv(23)
+ v(82) = pv(1)*pv(23)
+ v(83) = pv(2)*pv(23)
+ v(84) = pv(0)*pv(24)
+ v(85) = pv(1)*pv(24)
+ v(86) = pv(2)*pv(24)
+ v(87) = pv(0)*pv(25)
+ v(88) = pv(1)*pv(25)
+ v(89) = pv(2)*pv(25)

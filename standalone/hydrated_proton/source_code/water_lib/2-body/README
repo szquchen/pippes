@@ -1,0 +1,108 @@
+!***********************************************************!
+!-----------------------------------------------------------!
+! Potential and dipole moment surfaces for H4O2             !
+! version 4, capable of H2O...H2O dissociation              !
+! Authors: Xinchuan Huang,Bastiaan J. Braams,Joel M. Bowman !
+!                                                           !
+! Permanent contact:  Joel M. Bowman                        !
+! E-mail: bowman@euch4e.chem.emory.edu                      !
+!------------Note by Xinchuan Huang on 2006-06-19-----------!
+!***********************************************************!
+
+1. Introduction
+
+This directory contains both the potential and dipole moment surfaces of water dimer
+, H4O2 PES-4 and DMS-4, built in 2006 summer . 
+
+The work were developed in Dr. Bowman's group
+ Cherry L. Emerson Center for Scientific Computation
+ & Department of Chemistry
+ Emory University, Atlanta, GA 30322
+
+Previous version of the surfaces [PES-3 & DMS-3] have been published. 
+Details can be found in:
+ X. Huang, B. J. Braams, J. M. Bowman, J. Phys. Chem. A, 110, 445-451 (2006)
+
+This work has included 10227 extra ab initio points, equally distributed from 0 to 10000 cm-1.  Exactly same fitting algorithm/parameters are used as in PES-3
+
+Fitting RMS errors of new surfaces are similar to, or slightly better than PES-3 & DMS-3. However, it provides more reliable description in low-energy region.
+
+The fittings codes were written by B. J. Braams, on 2004-11-09
+Applied on the ab initio data and supplemented with external interfaces by X. Huang, on 2006-06-19.
+
+NOTE: After decompressing the .tgz file, users should read this README file first
+ 
+2. Present codes have been tested with PGI pgf90 compiler (5.1) and Intel ifort compiler (9.0), on IA-32 Linux (Redhat 7.3) platform. 
+  
+ Before going to next steps, Users must have at least one of the two compilers correctly installed and usable.  
+
+3. After decompressing the .tgz file, the h4o2.pes4.dms4 directory has everything you need to build and test the fortran libraries.
+
+Note:
+   If you have both pgi and ifort compilers installed, use "makelib" and "testlib";
+   If you have pgi compiler only, use "makelib.pgi" and "testlib.pgi"
+   If you have ifort compiler only, use "makelib.ifort" and "testlib.ifort"
+
+Please key-in following commands:
+
+   cd h4o2.pes4.dms4
+   clean                   (for 1st trial, this step can be ignored)
+   source makelib          (or source makelib.pgi / makelib.ifort) 
+   source testlib          (or source testlib.pgi / testlib.ifort)
+
+Now everything is ready if you don't see any errors. Note: some warning messages and "No files" messages may appear during some steps, but it can be safely ignored.
+
+The compiled library files are:
+   
+   libh4o2pes4.a       (pgi compiler, for PES3)
+   libh4o2pes4ifc.a    (ifort compiler, for PES3)
+   libh4o2dms4.a       (pgi compiler, for DMS3)
+   libh4o2dms4ifc.a    (ifort compiler, for DMS3)
+
+The necessary coefficient files are:
+
+   h4o2.pes4.coeff.dat
+   h4o2.dms4.coeff.dat 
+  (they should be put under the directory where executable will run).
+
+It should be noted that the dms4 library should be put in front of pes4 library when both libraries are needed during linking stage, e.g., in "testlib" script:
+
+   pf90 test.f90 -o test.pf90.x -L../ -lh4o2dms4 -lh4o2pes4
+   if90x test.f90 -o test.if90x.x -L../ -lh4o2dms4ifc -lh4o2pes4ifc
+   (see "alias" definitions for pf90 and if90x in "makelib" and "testlib")
+
+Under "test" dir, you can find the fort.2003.pf90 (and/or fort.2003.if90x), which was generated with the new library files you just created. In last step of "testlib" script, the new fort.2003.xxx file(s) have been compared with the fort.2003.pes4, which would provide the verifications for the libraries)
+
+Depends on the platform and user-preferences, users may want to modify the "alias if90x" and "alias pf90" command lines in "makelib" and "testlib" scripts. 
+
+
+4. The fort.2003.pes4 file, gives the electronic ab initio energies, total dipole magnitudes, and x-, y-, z- dipole components of 10 stationary points located on water dimer surface PES4. Energies are given in hartree, dipole magnitude and components are given in a.u. (NOT in Debye). 
+   Note: the 10str.geo.dat file has the cartesian coor of 10 stationary points, we use it to testify the new libary files that users just created. If one or two geometries may not be exact, they are still VERY VERY CLOSE to true stationary points on PES4, and definitely reliable. (Only exception is SP2, I would appreciate if anyboy can find an accurate SP2 geometry on this surface .... while current SP2 is still usable/reliable)
+
+5. the test.f90 program under "test" dir provides the good example of using the surfaces, i.e., prepot() and predip() subroutines should be invoked BEFORE the first calls to to calcpot() and calcdip().
+
+          call prepot()
+          call predip()
+ 
+          call calcpot(V, cart0)
+          call calcdip(dip, cart0)
+
+   cart0(6,3) should be the cartesian coor of water dimer, in bohr. Atoms are ordered as O H H O H H. The V returned is the fitted electronic energies of dimer system, in hartree, the dip(3) returned is the dipole vector in a.u. (NOT in Debye).
+
+6. The minimum structure on dimer PES4 is given below, in bohr
+
+O  -2.77650901836828    0.00000000000000    0.000000000000000E+000
+H  -0.95686528797799    0.00000000000000   -0.177535092761627
+H  -3.39956602110828    0.00000000000000   -1.70526660299721
+O   2.77650901836828    0.00000000000000    0.000000000000000E+000
+H   3.38569020842518    1.43883533857756    0.930149212918977
+H   3.38569020842518   -1.43883533857756    0.930149212918977
+
+   E = -152.692234164271 hartree   (last a few digits may vary, depends on the compiler options and platform)
+ 
+    
+------------------------END OF NOTES, 2006-06-19--------------------------
+ please contact xhuang@emory.edu OR xinchuan@hotmail.com if you have any questions ...  
+
+
+

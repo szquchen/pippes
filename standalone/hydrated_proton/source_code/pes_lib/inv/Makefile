@@ -1,0 +1,182 @@
+ FC = gfortran
+FFLAGS = -O -fdefault-real-8 -fdefault-double-8 -ffree-line-length-0 -J../mod 
+BLD = /usr/bin/ar -rcv
+# Set objlibinv to the list of object files to be included in libinv.a.
+objlibinv = inv_wp.o inv_any.o \
+inv_sym2.o inv_sym2s2.o inv_sym2t1.o inv_sym2t2.o \
+inv_sym3.o inv_sym4.o inv_sym5.o inv_sym6.o inv_sym7.o \
+inv_sym.o \
+inv_bg22.o inv_bg32.o inv_bg33.o inv_bg42.o inv_bg43.o inv_bg44.o \
+inv_bg52.o inv_bg53.o inv_bg54.o inv_bg62.o inv_bg63.o inv_bg72.o \
+inv_bg73.o \
+inv_bg.o \
+inv_cg2.o inv_cg3.o inv_cg4.o inv_cg5.o inv_cg6.o inv_cg7.o \
+inv_cg.o \
+inv_core.o \
+inv_mgx.o inv_mg1.o inv_mg11.o inv_mg2.o inv_mg111.o inv_mg21.o inv_mg3.o \
+inv_mg1111.o inv_mg211.o inv_mg22.o inv_mg31.o inv_mg4.o \
+inv_mg11111.o inv_mg2111.o inv_mg221.o inv_mg311.o inv_mg32.o \
+inv_mg41.o inv_mg5.o \
+inv_mg111111.o inv_mg21111.o inv_mg2211.o inv_mg222.o inv_mg3111.o \
+inv_mg321.o inv_mg33.o inv_mg411.o inv_mg42.o inv_mg51.o inv_mg6.o \
+inv_mg1111111.o inv_mg211111.o inv_mg22111.o inv_mg2221.o \
+inv_mg31111.o inv_mg3211.o inv_mg322.o inv_mg331.o inv_mg4111.o \
+inv_mg421.o inv_mg43.o inv_mg511.o inv_mg52.o inv_mg61.o inv_mg7.o \
+inv_mg11111111.o inv_mg2111111.o inv_mg221111.o inv_mg22211.o \
+inv_mg2222.o inv_mg311111.o inv_mg32111.o inv_mg3221.o inv_mg3311.o \
+inv_mg332.o inv_mg41111.o inv_mg4211.o inv_mg422.o inv_mg431.o \
+inv_mg44.o inv_mg5111.o inv_mg521.o inv_mg53.o inv_mg611.o inv_mg62.o \
+inv_mg71.o \
+inv_mg111111111.o inv_mg21111111.o inv_mg2211111.o inv_mg222111.o \
+inv_mg22221.o inv_mg3111111.o inv_mg321111.o inv_mg32211.o inv_mg3222.o \
+inv_mg33111.o inv_mg3321.o inv_mg333.o \
+inv_mg411111.o inv_mg42111.o inv_mg4221.o \
+inv_mg4311.o inv_mg432.o inv_mg441.o \
+inv_mg51111.o inv_mg5211.o inv_mg522.o inv_mg531.o inv_mg54.o \
+inv_mg6111.o inv_mg621.o inv_mg63.o inv_mg711.o inv_mg72.o \
+inv_mg1111111111.o inv_mg211111111.o inv_mg22111111.o inv_mg2221111.o \
+inv_mg222211.o inv_mg22222.o \
+inv_mg31111111.o inv_mg3211111.o inv_mg322111.o inv_mg32221.o \
+inv_mg331111.o inv_mg33211.o inv_mg3322.o inv_mg3331.o \
+inv_mg4111111.o inv_mg421111.o inv_mg42211.o inv_mg4222.o \
+inv_mg43111.o inv_mg4321.o inv_mg433.o inv_mg4411.o inv_mg442.o \
+inv_mg511111.o inv_mg52111.o inv_mg5221.o inv_mg5311.o inv_mg532.o \
+inv_mg541.o \
+inv_mg61111.o inv_mg6211.o inv_mg622.o inv_mg631.o \
+inv_mg7111.o inv_mg721.o inv_mg73.o \
+inv_mg.o \
+inv_mgv1.o inv_mgv11.o inv_mgv2.o inv_mgv111.o inv_mgv21.o inv_mgv3.o \
+inv_mgv1111.o inv_mgv211.o inv_mgv22.o inv_mgv31.o inv_mgv4.o \
+inv_mgv11111.o inv_mgv2111.o inv_mgv221.o inv_mgv311.o inv_mgv32.o \
+inv_mgv41.o inv_mgv5.o \
+inv_mgv111111.o inv_mgv21111.o inv_mgv2211.o inv_mgv222.o inv_mgv3111.o \
+inv_mgv321.o inv_mgv33.o inv_mgv411.o inv_mgv42.o inv_mgv51.o inv_mgv6.o \
+inv_mgv1111111.o inv_mgv211111.o inv_mgv22111.o inv_mgv2221.o \
+inv_mgv31111.o inv_mgv3211.o inv_mgv322.o inv_mgv331.o inv_mgv4111.o \
+inv_mgv421.o inv_mgv43.o inv_mgv511.o inv_mgv52.o inv_mgv61.o inv_mgv7.o \
+inv_mgv11111111.o inv_mgv2111111.o inv_mgv221111.o inv_mgv22211.o \
+inv_mgv2222.o inv_mgv311111.o inv_mgv32111.o inv_mgv3221.o inv_mgv3311.o \
+inv_mgv332.o inv_mgv41111.o inv_mgv4211.o inv_mgv422.o inv_mgv431.o \
+inv_mgv44.o inv_mgv5111.o inv_mgv521.o inv_mgv53.o inv_mgv611.o inv_mgv62.o \
+inv_mgv71.o \
+inv_mgv111111111.o inv_mgv21111111.o inv_mgv2211111.o inv_mgv222111.o \
+inv_mgv22221.o inv_mgv3111111.o inv_mgv321111.o inv_mgv32211.o inv_mgv3222.o \
+inv_mgv33111.o inv_mgv3321.o inv_mgv333.o \
+inv_mgv411111.o inv_mgv42111.o inv_mgv4221.o \
+inv_mgv4311.o inv_mgv432.o inv_mgv441.o \
+inv_mgv51111.o inv_mgv5211.o inv_mgv522.o inv_mgv531.o inv_mgv54.o \
+inv_mgv6111.o inv_mgv621.o inv_mgv63.o inv_mgv711.o inv_mgv72.o \
+inv_mgv1111111111.o inv_mgv211111111.o inv_mgv22111111.o inv_mgv2221111.o \
+inv_mgv222211.o inv_mgv22222.o \
+inv_mgv31111111.o inv_mgv3211111.o inv_mgv322111.o inv_mgv32221.o \
+inv_mgv331111.o inv_mgv33211.o inv_mgv3322.o inv_mgv3331.o \
+inv_mgv4111111.o inv_mgv421111.o inv_mgv42211.o inv_mgv4222.o \
+inv_mgv43111.o inv_mgv4321.o inv_mgv433.o inv_mgv4411.o inv_mgv442.o \
+inv_mgv511111.o inv_mgv52111.o inv_mgv5221.o inv_mgv5311.o inv_mgv532.o \
+inv_mgv541.o \
+inv_mgv61111.o inv_mgv6211.o inv_mgv622.o inv_mgv631.o \
+inv_mgv7111.o inv_mgv721.o inv_mgv73.o \
+inv_mgv.o \
+inv_ms22.o inv_ms23.o inv_ms32.o \
+inv_t1.o inv_t3.o \
+inv_cxx.o inv_cx1.o inv_cx11.o inv_cx2.o inv_cx111.o inv_cx21.o inv_cx3.o \
+inv_cx1111.o inv_cx211.o inv_cx22.o inv_cx31.o inv_cx4.o \
+inv_cx11111.o inv_cx2111.o inv_cx221.o inv_cx311.o inv_cx32.o \
+inv_cx41.o inv_cx5.o \
+inv_cx111111.o inv_cx21111.o inv_cx2211.o inv_cx222.o inv_cx3111.o \
+inv_cx321.o inv_cx33.o inv_cx411.o inv_cx42.o inv_cx51.o inv_cx6.o \
+inv_cx1111111.o inv_cx211111.o inv_cx22111.o inv_cx2221.o \
+inv_cx31111.o inv_cx3211.o inv_cx322.o inv_cx331.o inv_cx4111.o \
+inv_cx421.o inv_cx43.o inv_cx511.o inv_cx52.o inv_cx61.o inv_cx7.o \
+inv_cx11111111.o inv_cx2111111.o inv_cx221111.o inv_cx22211.o \
+inv_cx2222.o inv_cx311111.o inv_cx32111.o inv_cx3221.o inv_cx3311.o \
+inv_cx332.o inv_cx41111.o inv_cx4211.o inv_cx422.o inv_cx431.o \
+inv_cx44.o inv_cx5111.o inv_cx521.o inv_cx53.o inv_cx611.o inv_cx62.o \
+inv_cx71.o \
+inv_cx111111111.o inv_cx21111111.o inv_cx2211111.o inv_cx222111.o \
+inv_cx22221.o inv_cx3111111.o inv_cx321111.o inv_cx32211.o \
+inv_cx3222.o inv_cx33111.o inv_cx3321.o inv_cx333.o \
+inv_cx411111.o inv_cx42111.o inv_cx4221.o inv_cx4311.o \
+inv_cx432.o inv_cx441.o inv_cx51111.o inv_cx5211.o inv_cx522.o \
+inv_cx531.o inv_cx54.o \
+inv_cx6111.o inv_cx621.o inv_cx63.o inv_cx711.o inv_cx72.o \
+inv_cx1111111111.o inv_cx211111111.o inv_cx22111111.o inv_cx2221111.o \
+inv_cx222211.o inv_cx22222.o \
+inv_cx31111111.o inv_cx3211111.o inv_cx322111.o inv_cx32221.o \
+inv_cx331111.o inv_cx33211.o inv_cx3322.o inv_cx3331.o \
+inv_cx4111111.o inv_cx421111.o inv_cx42211.o inv_cx4222.o \
+inv_cx43111.o inv_cx4321.o inv_cx433.o inv_cx4411.o inv_cx442.o \
+inv_cx511111.o inv_cx52111.o inv_cx5221.o inv_cx5311.o inv_cx532.o \
+inv_cx541.o \
+inv_cx61111.o inv_cx6211.o inv_cx622.o inv_cx631.o \
+inv_cx7111.o inv_cx721.o inv_cx73.o \
+inv_cxv1.o inv_cxv11.o inv_cxv2.o inv_cxv111.o inv_cxv21.o inv_cxv3.o \
+inv_cxv1111.o inv_cxv211.o inv_cxv22.o inv_cxv31.o inv_cxv4.o \
+inv_cxv11111.o inv_cxv2111.o inv_cxv221.o inv_cxv311.o inv_cxv32.o \
+inv_cxv41.o inv_cxv5.o \
+inv_cxv111111.o inv_cxv21111.o inv_cxv2211.o inv_cxv222.o inv_cxv3111.o \
+inv_cxv321.o inv_cxv33.o inv_cxv411.o inv_cxv42.o inv_cxv51.o inv_cxv6.o \
+inv_cxv1111111.o inv_cxv211111.o inv_cxv22111.o inv_cxv2221.o \
+inv_cxv31111.o inv_cxv3211.o inv_cxv322.o inv_cxv331.o inv_cxv4111.o \
+inv_cxv421.o inv_cxv43.o inv_cxv511.o inv_cxv52.o inv_cxv61.o inv_cxv7.o \
+inv_cxv11111111.o inv_cxv2111111.o inv_cxv221111.o inv_cxv22211.o \
+inv_cxv2222.o inv_cxv311111.o inv_cxv32111.o inv_cxv3221.o inv_cxv3311.o \
+inv_cxv332.o inv_cxv41111.o inv_cxv4211.o inv_cxv422.o inv_cxv431.o \
+inv_cxv44.o inv_cxv5111.o inv_cxv521.o inv_cxv53.o inv_cxv611.o inv_cxv62.o \
+inv_cxv71.o \
+inv_cxv111111111.o inv_cxv21111111.o inv_cxv2211111.o inv_cxv222111.o \
+inv_cxv22221.o inv_cxv3111111.o inv_cxv321111.o inv_cxv32211.o \
+inv_cxv3222.o inv_cxv33111.o inv_cxv3321.o inv_cxv333.o \
+inv_cxv411111.o inv_cxv42111.o inv_cxv4221.o inv_cxv4311.o \
+inv_cxv432.o inv_cxv441.o inv_cxv51111.o inv_cxv5211.o inv_cxv522.o \
+inv_cxv531.o inv_cxv54.o \
+inv_cxv6111.o inv_cxv621.o inv_cxv63.o inv_cxv711.o inv_cxv72.o \
+inv_cxv1111111111.o inv_cxv211111111.o inv_cxv22111111.o inv_cxv2221111.o \
+inv_cxv222211.o inv_cxv22222.o \
+inv_cxv31111111.o inv_cxv3211111.o inv_cxv322111.o inv_cxv32221.o \
+inv_cxv331111.o inv_cxv33211.o inv_cxv3322.o inv_cxv3331.o \
+inv_cxv4111111.o inv_cxv421111.o inv_cxv42211.o inv_cxv4222.o \
+inv_cxv43111.o inv_cxv4321.o inv_cxv433.o inv_cxv4411.o inv_cxv442.o \
+inv_cxv511111.o inv_cxv52111.o inv_cxv5221.o inv_cxv5311.o inv_cxv532.o \
+inv_cxv541.o \
+inv_cxv61111.o inv_cxv6211.o inv_cxv622.o inv_cxv631.o \
+inv_cxv7111.o inv_cxv721.o inv_cxv73.o \
+inv_cxy.o inv_cxz.o inv_cx.o \
+inv.o
+
+#-----------------------------------------------------------------------
+# Rules.
+
+lib : libinv.a
+
+.PHONY : lib clean realclean depend
+.SUFFIXES : $(nil)
+.SUFFIXES : .f90 .o .exe
+FORCE :
+
+# Autogenerated dependency file
+include .depend
+
+# Pattern rule to make %.o file
+.f90.o :
+	$(FC) -c $(FFLAGS) $<
+
+# Here are the rules to make the libraries.
+libinv.a : $(objlibinv)
+	\rm -f $@
+	$(BLD) $(@F) $(objlibinv)
+
+# Making an executable (to test libinv)
+.f90.exe :
+	$(FC) -o $@ $(FFLAGS) $(LIBDIRS) $< $(LIBS)
+
+# Targets 'clean' and 'realclean' clean up the directory.
+clean : FORCE
+	rm -f *.o *~ core junk
+realclean : clean
+	rm -f *.a *.mod *.exe
+
+# Hidden dependencies file .depend
+depend .depend :
+	makedepf90 *.f90 > .depend
+# DO NOT DELETE

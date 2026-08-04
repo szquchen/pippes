@@ -1,0 +1,34 @@
+1. Go to "source_file" folder to compile library 
+
+2. Go to "water_lib" folder to compile library for WHBB water potential
+   cd water_lib
+   cd 2-body
+   cd pes
+   ./mke
+   cd ..
+   cd dms
+   ./mke
+   cd ..
+   cp pes/libpes2b.a dms/libdms2b.a ../../../lib/watlib
+   cd ..
+   cd 3-body 
+   make
+   cp -r libpes3b.a mod3b ../../../lib/watlib
+   cd ../..
+3. Go to "pes_lib" folder to compile library for PES library
+   cd pes_lib
+   cd inv
+   make
+   cd ..
+   cd pes-xyz
+   make
+   cp libpes.a libpx.a ..
+   cd ..
+   cp -r libpes.a libpx.a mod ../../lib/pes_lib
+
+4. Now, the library file has been prepared. 
+   To check the file, go to "lib" folder in the main directory. 
+   Under "lib" folder, the contained "wat_lib" folder should have updated "libdms2b.a", "libpes2b.a", "libpes3b.a" and "mod3d"
+   the contained "pes_lib" folder should have "libpes.a" "libpx.a" and "mod"
+
+5. Refer to "README" file to compile the PES and run the code

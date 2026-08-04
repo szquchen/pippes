@@ -1,0 +1,3 @@
+rm *.o *.mod
+gfortran -O -fdefault-real-8 -fdefault-double-8 -c inv_share.f90  inv_mg42_t.f90 get*f90 h4o2*f90
+ar r libpes2b.a *.o

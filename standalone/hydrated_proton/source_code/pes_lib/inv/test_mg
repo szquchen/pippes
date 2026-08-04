@@ -1,0 +1,7 @@
+#! /bin/sh
+m4 -D MG=mg$1 -D MGV=mgv$1 -D MXD=$2 test_mg.m4 > junk.f90
+echo "testing mg$1, mxd=$2"
+gmake junk.exe
+./junk.exe
+\rm -f junk.exe
+exit 0

@@ -1,0 +1,8 @@
+#! /bin/sh
+m4 -U len -U index -U include -U substr \
+  -D GRP=$1 test_mkprib.m4 > junk.f90
+echo "test_mkprib $1"
+gmake junk.exe
+./junk.exe > $1_prib.f90
+\rm -f junk.exe
+exit 0

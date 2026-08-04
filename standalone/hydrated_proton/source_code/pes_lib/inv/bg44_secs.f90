@@ -1,0 +1,2 @@
+SUBROUTINE bg44_secs ()
+END SUBROUTINE bg44_secs

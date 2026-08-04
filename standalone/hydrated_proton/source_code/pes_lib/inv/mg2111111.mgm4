@@ -1,0 +1,60 @@
+Group degree and order: 28 2
+Degrees of Primaries:
+[ 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 
+2, 2 ]
+Number of primaries at each degree, and sums:
+[ 0, 22, 6, 0, 0, 0, 0, 0, 0, 0 ]
+[ 0, 22, 28, 28, 28, 28, 28, 28, 28, 28 ]
+Dimensions of the Primaries Ring:
+[ 1, 22, 259, 2156, 14189, 78386, 377279, 1622456, 6348149, 22908886 ]
+[ 1, 23, 282, 2438, 16627, 95013, 472292, 2094748, 8442897, 31351783 ]
+Expected Numbers of Secondaries, from Degree 0:
+[ 1, 0, 15, 0, 15, 0, 1, 0, 0, 0 ]
+[ 1, 1, 16, 16, 31, 31, 32, 32, 32, 32 ]
+Molien/Hilbert Series from Degree 0, and sums:
+[ 1, 22, 274, 2486, 18089, 111056, 594000, 2830608, 12220428, 48423672 ]
+[ 1, 23, 297, 2783, 20872, 131928, 725928, 3556536, 15776964, 64200636 ]
+ v(0) = 1
+Time: 0.000
+Time: 0.000
+Time: 0.000
+Time: 0.000
+Time: 0.030
+Time: 0.070
+ pv(0) = SYM d(i0,j0)*d(i0,k0)
+ pv(1) = SYM d(i0,j0)*d(i0,l0)
+ pv(2) = SYM d(i0,k0)*d(i0,l0)
+ pv(3) = SYM d(i0,j0)*d(i0,m0)
+ pv(4) = SYM d(i0,k0)*d(i0,m0)
+ pv(5) = SYM d(i0,l0)*d(i0,m0)
+ pv(6) = SYM d(i0,j0)*d(i0,n0)
+ pv(7) = SYM d(i0,k0)*d(i0,n0)
+ pv(8) = SYM d(i0,l0)*d(i0,n0)
+ pv(9) = SYM d(i0,m0)*d(i0,n0)
+ pv(10) = SYM d(i0,j0)*d(i0,o0)
+ pv(11) = SYM d(i0,k0)*d(i0,o0)
+ pv(12) = SYM d(i0,l0)*d(i0,o0)
+ pv(13) = SYM d(i0,m0)*d(i0,o0)
+ pv(14) = SYM d(i0,n0)*d(i0,o0)
+ v(1:15) = pv(0:14)
+Time: 0.010
+Time: 0.450
+Time: 6.520
+Time: 2.330
+ v(16) = pv(0)*pv(5)
+ v(17) = pv(0)*pv(8)
+ v(18) = pv(0)*pv(9)
+ v(19) = pv(1)*pv(9)
+ v(20) = pv(2)*pv(9)
+ v(21) = pv(0)*pv(12)
+ v(22) = pv(0)*pv(13)
+ v(23) = pv(1)*pv(13)
+ v(24) = pv(2)*pv(13)
+ v(25) = pv(0)*pv(14)
+ v(26) = pv(1)*pv(14)
+ v(27) = pv(2)*pv(14)
+ v(28) = pv(3)*pv(14)
+ v(29) = pv(4)*pv(14)
+ v(30) = pv(5)*pv(14)
+Time: 16.210
+Time: 380.130

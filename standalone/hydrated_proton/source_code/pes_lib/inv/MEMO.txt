@@ -1,0 +1,108 @@
+Code modifications to contemplate:
+
+Replace the <grp>_gens routines by integer arrays,
+<grp>_gens(0:nr-1,0:ngen-1), containing the generating permutations;
+otherwise just rely on mgx_gens.
+
+Replace the mg<nki>_mk1d routines by the general mgx_mk1d; maybe add
+an integer array mg<nki>_pairs(0:1,0:nr-1) for the purpose of mk1d and
+mk2d.
+
+Create interface routines mgx_{prims,secs,base}.
+
+Reconsider the 2d-1d correspondence.  Block revlex or plain revlex?
+Perhaps avoid the question; just use 2-d indexing throughout in the
+mg* and cx* families of codes.
+
+Get rid of inv_t1, but create inv_t2, inv_t4, etc; and a general
+inv_tx.
+
+In subroutine any_mkbase:
+allocate (l(0:mxd,0:sum(dvp(0:mxd))))
+why not
+allocate (l(0:mxd,0:sum(dvp(0:mxd))-1)) ??
+
+Reconsider the names inv0, inv_any.
+
+Maybe cx_cut should not be a routine in the inv package, but should be
+a user procedure that is passed to the cx_base routines.
+
+------------------------------------------------------------------------
+
+July 27, 2004.  For routines mg<id>_base and cx_b<id> we use this
+rather ugly structure (simplified here):
+  subroutine foo (x, w)
+  real, intent (in) :: x(0:)
+  real, intent (out) :: w(0:nn-1)
+It would be cleaner to use either of the following alternatives:
+  function foo (x, w)
+  real, intent (in) :: x(0:)
+  real :: w(0:nn-1)
+or
+  subroutine foo (x, w)
+  real, intent (in) :: x(0:)
+  real, intent (out) :: w(0:)
+However, both alternatives have a large performance penalty (factor of
+about 3) on the Sun (Forte Developer 7) and on the AMD (Ifort 8).
+Must check this issue again in a year or so.
+
+------------------------------------------------------------------------
+
+August 9/10, 2004.  A few timing tests.
+
+(A).  I tried to replace in routines cx_base[2-6].f90 the call to the
+specific cx_b<nkj> routines (e.g., cx_b221) by calls to the generic
+routine cx_bx.  On the Sun system the time penalty is very close to 25
+percent.  This is relevant only to the procedures for constructing the
+fit.  When evaluating the fit we use the direct calls through the
+specific cx_f<nkj> routines anyway.
+
+(B).  I tried to replace in all the mg<nki>_base routines the computer
+generated part for evaluating the base by a call to the general
+routine any_base.  This gives a time penalty of a bit over 50% on the
+Sun, and of about 35% on the AMD Opteron undeer Ifort.
+
+------------------------------------------------------------------------
+
+August 12, 2004.  Experiments on different versions of cx_cut.
+
+Default:
+
+PURE FUNCTION cx_cut_vec (pc, x) result (f)
+type (cx_t), intent (in) :: pc
+real (kind=wp), intent (in) :: x(0:)
+real (kind=wp) :: f
+real (kind=wp) :: d
+d = sqrt(sum(x**2)/size(x))
+if (d/pc%ax.lt.1) then
+ f = (1-d/pc%ax)**pc%kx/d**pc%lx
+else
+ f = 0
+endif
+return
+END FUNCTION cx_cut_vec
+
+Experiments were done on the three body Ozone system.  These are not
+very nice data because of the conical intersection near the
+equilateral triangle geometry.
+
+I tried replacing the 2-norm by the 1-norm and the 4-norm.  The 1-norm
+worked just as well; the 4-norm was a bit worse.
+
+I tried to use f = product(max(0,1-x/a)**k) .  Best results with k=5,
+and it is then just as good as the default.
+
+I tried to define a vector y = 1/max(0,1-x/a) and then use the inverse
+of some power of some norm of y.  Tried various norms and powers, but
+it was always a bit worse than the default.
+
+------------------------------------------------------------------------
+
+Code issues in the cx package:
+
+Need an interface to the mg<nki>_base routines similar to the cx_bx
+interface to cx_b<nkj>.
+
+Perhaps change the style of the 'sys' argument in cx_base<2-6>.
+
+------------------------------------------------------------------------

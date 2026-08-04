@@ -1,0 +1,313 @@
+Group degree and order: 21 5040
+Degrees of Primaries:
+[ 1, 2, 2, 3, 3, 3, 3, 3, 4, 4, 4, 5, 5, 5, 6, 6, 7, 7, 7, 10, 12 ]
+Number of primaries at each degree, and sums:
+[ 0, 1, 2, 5, 3, 3, 2, 3, 0, 0 ]
+[ 0, 1, 3, 8, 11, 14, 16, 19, 19, 19 ]
+Dimensions of the Primaries Ring:
+[ 1, 1, 3, 8, 14, 27, 54, 93, 162, 281 ]
+[ 1, 2, 5, 13, 27, 54, 108, 201, 363, 644 ]
+Expected Numbers of Secondaries, from Degree 0:
+[ 1, 0, 0, 0, 8, 25, 70, 169, 450, 1146 ]
+[ 1, 1, 1, 1, 9, 34, 104, 273, 723, 1869 ]
+Molien/Hilbert Series from Degree 0, and sums:
+[ 1, 1, 3, 8, 22, 60, 173, 471, 1303, 3510 ]
+[ 1, 2, 5, 13, 35, 95, 268, 739, 2042, 5552 ]
+ v(0) = 1
+Time: 0.010
+Time: 0.000
+Time: 0.000
+Time: 0.010
+Time: 0.010
+Time: 0.010
+Time: 0.000
+Time: 0.070
+Time: 0.100
+Time: 0.010
+Time: 0.440
+Time: 1.460
+ pv(0) = SYM d(i0,i1)^2*d(i0,i2)^2
+ pv(1) = SYM d(i0,i1)^2*d(i0,i2)*d(i1,i2)
+ pv(2) = SYM d(i0,i1)^2*d(i0,i2)*d(i0,i3)
+ pv(3) = SYM d(i0,i1)^2*d(i1,i2)*d(i0,i3)
+ pv(4) = SYM d(i0,i1)*d(i0,i2)*d(i1,i2)*d(i0,i3)
+ pv(5) = SYM d(i0,i1)*d(i1,i2)^2*d(i0,i3)
+ pv(6) = SYM d(i0,i2)*d(i1,i2)*d(i0,i3)*d(i1,i3)
+ pv(7) = SYM d(i0,i1)*d(i1,i2)*d(i0,i3)*d(i0,i4)
+ v(1:8) = pv(0:7)
+Time: 0.010
+Time: 2.520
+Time: 16.220
+ pv(8) = SYM d(i0,i1)^3*d(i0,i2)^2
+ pv(9) = SYM d(i0,i1)^3*d(i0,i2)*d(i1,i2)
+ pv(10) = SYM d(i0,i1)^2*d(i0,i2)^2*d(i1,i2)
+ pv(11) = SYM d(i0,i1)^3*d(i0,i2)*d(i0,i3)
+ pv(12) = SYM d(i0,i1)^2*d(i0,i2)^2*d(i0,i3)
+ pv(13) = SYM d(i0,i1)^3*d(i1,i2)*d(i0,i3)
+ pv(14) = SYM d(i0,i1)^2*d(i0,i2)*d(i1,i2)*d(i0,i3)
+ pv(15) = SYM d(i0,i1)^2*d(i1,i2)^2*d(i0,i3)
+ pv(16) = SYM d(i0,i1)*d(i0,i2)*d(i1,i2)^2*d(i0,i3)
+ pv(17) = SYM d(i0,i1)*d(i1,i2)^3*d(i0,i3)
+ pv(18) = SYM d(i0,i1)*d(i0,i2)*d(i1,i2)*d(i0,i3)^2
+ pv(19) = SYM d(i0,i1)*d(i1,i2)^2*d(i0,i3)^2
+ pv(20) = SYM d(i0,i1)*d(i0,i2)*d(i1,i2)*d(i0,i3)*d(i1,i3)
+ pv(21) = SYM d(i0,i2)^2*d(i1,i2)*d(i0,i3)*d(i1,i3)
+ pv(22) = SYM d(i0,i1)^2*d(i0,i2)*d(i0,i3)*d(i0,i4)
+ pv(23) = SYM d(i0,i1)^2*d(i1,i2)*d(i0,i3)*d(i0,i4)
+ pv(24) = SYM d(i0,i1)*d(i0,i2)*d(i1,i2)*d(i0,i3)*d(i0,i4)
+ pv(25) = SYM d(i0,i1)*d(i1,i2)^2*d(i0,i3)*d(i0,i4)
+ pv(26) = SYM d(i0,i1)*d(i1,i2)*d(i0,i3)^2*d(i0,i4)
+ pv(27) = SYM d(i0,i1)*d(i0,i2)*d(i1,i2)*d(i1,i3)*d(i0,i4)
+ pv(28) = SYM d(i0,i2)^2*d(i1,i2)*d(i1,i3)*d(i0,i4)
+ pv(29) = SYM d(i0,i2)*d(i1,i2)*d(i0,i3)*d(i1,i3)*d(i0,i4)
+ pv(30) = SYM d(i0,i1)*d(i1,i2)*d(i1,i3)*d(i2,i3)*d(i0,i4)
+ pv(31) = SYM d(i1,i2)*d(i0,i3)*d(i2,i3)*d(i0,i4)*d(i1,i4)
+ pv(32) = SYM d(i0,i2)*d(i1,i2)*d(i1,i3)*d(i0,i4)*d(i0,i5)
+ v(9:33) = pv(8:32)
+Time: 0.100
+Time: 12.760
+Time: 179.910
+ pv(33) = SYM d(i0,i1)^5*d(i0,i2)
+ pv(34) = SYM d(i0,i1)^4*d(i0,i2)^2
+ pv(35) = SYM d(i0,i1)^3*d(i0,i2)^3
+ pv(36) = SYM d(i0,i1)^4*d(i0,i2)*d(i1,i2)
+ pv(37) = SYM d(i0,i1)^3*d(i0,i2)^2*d(i1,i2)
+ pv(38) = SYM d(i0,i1)^2*d(i0,i2)^2*d(i1,i2)^2
+ pv(39) = SYM d(i0,i1)^4*d(i0,i2)*d(i0,i3)
+ pv(40) = SYM d(i0,i1)^3*d(i0,i2)^2*d(i0,i3)
+ pv(41) = SYM d(i0,i1)^4*d(i1,i2)*d(i0,i3)
+ pv(42) = SYM d(i0,i1)^3*d(i0,i2)*d(i1,i2)*d(i0,i3)
+ pv(43) = SYM d(i0,i1)^2*d(i0,i2)^2*d(i1,i2)*d(i0,i3)
+ pv(44) = SYM d(i0,i1)^3*d(i1,i2)^2*d(i0,i3)
+ pv(45) = SYM d(i0,i1)^2*d(i0,i2)*d(i1,i2)^2*d(i0,i3)
+ pv(46) = SYM d(i0,i1)^2*d(i1,i2)^3*d(i0,i3)
+ pv(47) = SYM d(i0,i1)*d(i0,i2)*d(i1,i2)^3*d(i0,i3)
+ pv(48) = SYM d(i0,i1)*d(i1,i2)^4*d(i0,i3)
+ pv(49) = SYM d(i0,i1)^2*d(i0,i2)^2*d(i0,i3)^2
+ pv(50) = SYM d(i0,i1)^2*d(i0,i2)*d(i1,i2)*d(i0,i3)^2
+ pv(51) = SYM d(i0,i1)^2*d(i1,i2)^2*d(i0,i3)^2
+ pv(52) = SYM d(i0,i1)*d(i0,i2)*d(i1,i2)^2*d(i0,i3)^2
+ pv(53) = SYM d(i0,i1)*d(i1,i2)^3*d(i0,i3)^2
+ pv(54) = SYM d(i0,i1)*d(i0,i2)*d(i1,i2)*d(i0,i3)^3
+ pv(55) = SYM d(i0,i1)^2*d(i0,i2)*d(i1,i2)*d(i0,i3)*d(i1,i3)
+ pv(56) = SYM d(i0,i1)*d(i0,i2)^2*d(i1,i2)*d(i0,i3)*d(i1,i3)
+ pv(57) = SYM d(i0,i2)^3*d(i1,i2)*d(i0,i3)*d(i1,i3)
+ pv(58) = SYM d(i0,i2)^2*d(i1,i2)^2*d(i0,i3)*d(i1,i3)
+ pv(59) = SYM d(i0,i2)*d(i1,i2)^2*d(i0,i3)^2*d(i1,i3)
+ pv(60) = SYM d(i0,i1)*d(i0,i2)*d(i1,i2)*d(i0,i3)*d(i1,i3)*d(i2,i3)
+ pv(61) = SYM d(i0,i1)^3*d(i0,i2)*d(i0,i3)*d(i0,i4)
+ pv(62) = SYM d(i0,i1)^2*d(i0,i2)^2*d(i0,i3)*d(i0,i4)
+ pv(63) = SYM d(i0,i1)^3*d(i1,i2)*d(i0,i3)*d(i0,i4)
+ pv(64) = SYM d(i0,i1)^2*d(i0,i2)*d(i1,i2)*d(i0,i3)*d(i0,i4)
+ pv(65) = SYM d(i0,i1)^2*d(i1,i2)^2*d(i0,i3)*d(i0,i4)
+ pv(66) = SYM d(i0,i1)*d(i0,i2)*d(i1,i2)^2*d(i0,i3)*d(i0,i4)
+ pv(67) = SYM d(i0,i1)*d(i1,i2)^3*d(i0,i3)*d(i0,i4)
+ pv(68) = SYM d(i0,i1)^2*d(i1,i2)*d(i0,i3)^2*d(i0,i4)
+ pv(69) = SYM d(i0,i1)*d(i0,i2)*d(i1,i2)*d(i0,i3)^2*d(i0,i4)
+ pv(70) = SYM d(i0,i1)*d(i1,i2)^2*d(i0,i3)^2*d(i0,i4)
+ pv(71) = SYM d(i0,i1)*d(i1,i2)*d(i0,i3)^3*d(i0,i4)
+ pv(72) = SYM d(i0,i1)^2*d(i0,i2)*d(i1,i2)*d(i1,i3)*d(i0,i4)
+ pv(73) = SYM d(i0,i1)*d(i0,i2)^2*d(i1,i2)*d(i1,i3)*d(i0,i4)
+ pv(74) = SYM d(i0,i2)^3*d(i1,i2)*d(i1,i3)*d(i0,i4)
+ pv(75) = SYM d(i0,i2)^2*d(i1,i2)^2*d(i1,i3)*d(i0,i4)
+ pv(76) = SYM d(i0,i1)*d(i0,i2)*d(i1,i2)*d(i0,i3)*d(i1,i3)*d(i0,i4)
+ pv(77) = SYM d(i0,i2)^2*d(i1,i2)*d(i0,i3)*d(i1,i3)*d(i0,i4)
+ pv(78) = SYM d(i0,i1)*d(i1,i2)^2*d(i0,i3)*d(i1,i3)*d(i0,i4)
+ pv(79) = SYM d(i0,i2)*d(i1,i2)^2*d(i0,i3)*d(i1,i3)*d(i0,i4)
+ pv(80) = SYM d(i1,i2)^2*d(i0,i3)^2*d(i1,i3)*d(i0,i4)
+ pv(81) = SYM d(i0,i1)*d(i1,i2)^2*d(i1,i3)^2*d(i0,i4)
+ pv(82) = SYM d(i0,i2)*d(i1,i2)^2*d(i1,i3)^2*d(i0,i4)
+ pv(83) = SYM d(i0,i1)^2*d(i1,i2)*d(i1,i3)*d(i2,i3)*d(i0,i4)
+ pv(84) = SYM d(i0,i1)*d(i0,i2)*d(i1,i2)*d(i1,i3)*d(i2,i3)*d(i0,i4)
+ pv(85) = SYM d(i0,i1)*d(i1,i2)^2*d(i1,i3)*d(i2,i3)*d(i0,i4)
+ pv(86) = SYM d(i1,i2)^2*d(i0,i3)*d(i1,i3)*d(i2,i3)*d(i0,i4)
+ pv(87) = SYM d(i0,i2)*d(i1,i2)*d(i0,i3)*d(i1,i3)*d(i0,i4)^2
+ pv(88) = SYM d(i0,i1)*d(i1,i2)*d(i1,i3)*d(i2,i3)*d(i0,i4)^2
+ pv(89) = SYM d(i0,i2)*d(i1,i2)*d(i0,i3)*d(i1,i3)*d(i0,i4)*d(i1,i4)
+ pv(90) = SYM d(i0,i1)*d(i0,i2)*d(i0,i3)*d(i2,i3)*d(i0,i4)*d(i1,i4)
+ pv(91) = SYM d(i0,i1)*d(i1,i2)*d(i0,i3)*d(i2,i3)*d(i0,i4)*d(i1,i4)
+ pv(92) = SYM d(i1,i2)^2*d(i0,i3)*d(i2,i3)*d(i0,i4)*d(i1,i4)
+ pv(93) = SYM d(i0,i1)^2*d(i0,i2)*d(i0,i3)*d(i0,i4)*d(i0,i5)
+ pv(94) = SYM d(i0,i1)^2*d(i1,i2)*d(i0,i3)*d(i0,i4)*d(i0,i5)
+ pv(95) = SYM d(i0,i1)*d(i0,i2)*d(i1,i2)*d(i0,i3)*d(i0,i4)*d(i0,i5)
+ pv(96) = SYM d(i0,i1)*d(i1,i2)^2*d(i0,i3)*d(i0,i4)*d(i0,i5)
+ pv(97) = SYM d(i0,i1)^2*d(i1,i2)*d(i1,i3)*d(i0,i4)*d(i0,i5)
+ pv(98) = SYM d(i0,i1)*d(i0,i2)*d(i1,i2)*d(i1,i3)*d(i0,i4)*d(i0,i5)
+ pv(99) = SYM d(i0,i2)^2*d(i1,i2)*d(i1,i3)*d(i0,i4)*d(i0,i5)
+ pv(100) = SYM d(i0,i2)*d(i1,i2)*d(i0,i3)*d(i1,i3)*d(i0,i4)*d(i0,i5)
+ pv(101) = SYM d(i1,i2)^2*d(i0,i3)*d(i1,i3)*d(i0,i4)*d(i0,i5)
+ pv(102) = SYM d(i0,i2)*d(i1,i2)*d(i1,i3)*d(i0,i4)^2*d(i0,i5)
+ v(34:103) = pv(33:102)
+Time: 1.190
+Time: 58.030
+Time: 2149.670
+ pv(103) = SYM d(i0,i1)^5*d(i0,i2)^2
+ pv(104) = SYM d(i0,i1)^4*d(i0,i2)^3
+ pv(105) = SYM d(i0,i1)^5*d(i0,i2)*d(i1,i2)
+ pv(106) = SYM d(i0,i1)^4*d(i0,i2)^2*d(i1,i2)
+ pv(107) = SYM d(i0,i1)^3*d(i0,i2)^3*d(i1,i2)
+ pv(108) = SYM d(i0,i1)^3*d(i0,i2)^2*d(i1,i2)^2
+ pv(109) = SYM d(i0,i1)^5*d(i0,i2)*d(i0,i3)
+ pv(110) = SYM d(i0,i1)^4*d(i0,i2)^2*d(i0,i3)
+ pv(111) = SYM d(i0,i1)^3*d(i0,i2)^3*d(i0,i3)
+ pv(112) = SYM d(i0,i1)^5*d(i1,i2)*d(i0,i3)
+ pv(113) = SYM d(i0,i1)^4*d(i0,i2)*d(i1,i2)*d(i0,i3)
+ pv(114) = SYM d(i0,i1)^3*d(i0,i2)^2*d(i1,i2)*d(i0,i3)
+ pv(115) = SYM d(i0,i1)^4*d(i1,i2)^2*d(i0,i3)
+ pv(116) = SYM d(i0,i1)^3*d(i0,i2)*d(i1,i2)^2*d(i0,i3)
+ pv(117) = SYM d(i0,i1)^2*d(i0,i2)^2*d(i1,i2)^2*d(i0,i3)
+ pv(118) = SYM d(i0,i1)^3*d(i1,i2)^3*d(i0,i3)
+ pv(119) = SYM d(i0,i1)^2*d(i0,i2)*d(i1,i2)^3*d(i0,i3)
+ pv(120) = SYM d(i0,i1)^2*d(i1,i2)^4*d(i0,i3)
+ pv(121) = SYM d(i0,i1)*d(i0,i2)*d(i1,i2)^4*d(i0,i3)
+ pv(122) = SYM d(i0,i1)*d(i1,i2)^5*d(i0,i3)
+ pv(123) = SYM d(i0,i1)^3*d(i0,i2)^2*d(i0,i3)^2
+ pv(124) = SYM d(i0,i1)^3*d(i0,i2)*d(i1,i2)*d(i0,i3)^2
+ pv(125) = SYM d(i0,i1)^2*d(i0,i2)^2*d(i1,i2)*d(i0,i3)^2
+ pv(126) = SYM d(i0,i1)^3*d(i1,i2)^2*d(i0,i3)^2
+ pv(127) = SYM d(i0,i1)^2*d(i0,i2)*d(i1,i2)^2*d(i0,i3)^2
+ pv(128) = SYM d(i0,i1)^2*d(i1,i2)^3*d(i0,i3)^2
+ pv(129) = SYM d(i0,i1)*d(i0,i2)*d(i1,i2)^3*d(i0,i3)^2
+ pv(130) = SYM d(i0,i1)*d(i1,i2)^4*d(i0,i3)^2
+ pv(131) = SYM d(i0,i1)^2*d(i0,i2)*d(i1,i2)*d(i0,i3)^3
+ pv(132) = SYM d(i0,i1)*d(i0,i2)*d(i1,i2)^2*d(i0,i3)^3
+ pv(133) = SYM d(i0,i1)*d(i1,i2)^3*d(i0,i3)^3
+ pv(134) = SYM d(i0,i1)*d(i0,i2)*d(i1,i2)*d(i0,i3)^4
+ pv(135) = SYM d(i0,i1)^3*d(i0,i2)*d(i1,i2)*d(i0,i3)*d(i1,i3)
+ pv(136) = SYM d(i0,i1)^2*d(i0,i2)^2*d(i1,i2)*d(i0,i3)*d(i1,i3)
+ pv(137) = SYM d(i0,i1)*d(i0,i2)^3*d(i1,i2)*d(i0,i3)*d(i1,i3)
+ pv(138) = SYM d(i0,i2)^4*d(i1,i2)*d(i0,i3)*d(i1,i3)
+ pv(139) = SYM d(i0,i1)*d(i0,i2)^2*d(i1,i2)^2*d(i0,i3)*d(i1,i3)
+ pv(140) = SYM d(i0,i2)^3*d(i1,i2)^2*d(i0,i3)*d(i1,i3)
+ pv(141) = SYM d(i0,i1)*d(i0,i2)^2*d(i1,i2)*d(i0,i3)^2*d(i1,i3)
+ pv(142) = SYM d(i0,i1)*d(i0,i2)*d(i1,i2)^2*d(i0,i3)^2*d(i1,i3)
+ pv(143) = SYM d(i0,i2)^2*d(i1,i2)^2*d(i0,i3)^2*d(i1,i3)
+ pv(144) = SYM d(i0,i2)*d(i1,i2)^3*d(i0,i3)^2*d(i1,i3)
+ pv(145) = SYM d(i0,i1)^2*d(i0,i2)*d(i1,i2)*d(i0,i3)*d(i1,i3)*d(i2,i3)
+ pv(146) = SYM d(i0,i1)^4*d(i0,i2)*d(i0,i3)*d(i0,i4)
+ pv(147) = SYM d(i0,i1)^3*d(i0,i2)^2*d(i0,i3)*d(i0,i4)
+ pv(148) = SYM d(i0,i1)^4*d(i1,i2)*d(i0,i3)*d(i0,i4)
+ pv(149) = SYM d(i0,i1)^3*d(i0,i2)*d(i1,i2)*d(i0,i3)*d(i0,i4)
+ pv(150) = SYM d(i0,i1)^2*d(i0,i2)^2*d(i1,i2)*d(i0,i3)*d(i0,i4)
+ pv(151) = SYM d(i0,i1)^3*d(i1,i2)^2*d(i0,i3)*d(i0,i4)
+ pv(152) = SYM d(i0,i1)^2*d(i0,i2)*d(i1,i2)^2*d(i0,i3)*d(i0,i4)
+ pv(153) = SYM d(i0,i1)^2*d(i1,i2)^3*d(i0,i3)*d(i0,i4)
+ pv(154) = SYM d(i0,i1)*d(i0,i2)*d(i1,i2)^3*d(i0,i3)*d(i0,i4)
+ pv(155) = SYM d(i0,i1)*d(i1,i2)^4*d(i0,i3)*d(i0,i4)
+ pv(156) = SYM d(i0,i1)^2*d(i0,i2)^2*d(i0,i3)^2*d(i0,i4)
+ pv(157) = SYM d(i0,i1)^3*d(i1,i2)*d(i0,i3)^2*d(i0,i4)
+ pv(158) = SYM d(i0,i1)^2*d(i0,i2)*d(i1,i2)*d(i0,i3)^2*d(i0,i4)
+ pv(159) = SYM d(i0,i1)^2*d(i1,i2)^2*d(i0,i3)^2*d(i0,i4)
+ pv(160) = SYM d(i0,i1)*d(i0,i2)*d(i1,i2)^2*d(i0,i3)^2*d(i0,i4)
+ pv(161) = SYM d(i0,i1)*d(i1,i2)^3*d(i0,i3)^2*d(i0,i4)
+ pv(162) = SYM d(i0,i1)^2*d(i1,i2)*d(i0,i3)^3*d(i0,i4)
+ pv(163) = SYM d(i0,i1)*d(i0,i2)*d(i1,i2)*d(i0,i3)^3*d(i0,i4)
+ pv(164) = SYM d(i0,i1)*d(i1,i2)^2*d(i0,i3)^3*d(i0,i4)
+ pv(165) = SYM d(i0,i1)*d(i1,i2)*d(i0,i3)^4*d(i0,i4)
+ pv(166) = SYM d(i0,i1)^3*d(i0,i2)*d(i1,i2)*d(i1,i3)*d(i0,i4)
+ pv(167) = SYM d(i0,i1)^2*d(i0,i2)^2*d(i1,i2)*d(i1,i3)*d(i0,i4)
+ pv(168) = SYM d(i0,i1)*d(i0,i2)^3*d(i1,i2)*d(i1,i3)*d(i0,i4)
+ pv(169) = SYM d(i0,i2)^4*d(i1,i2)*d(i1,i3)*d(i0,i4)
+ pv(170) = SYM d(i0,i1)*d(i0,i2)^2*d(i1,i2)^2*d(i1,i3)*d(i0,i4)
+ pv(171) = SYM d(i0,i2)^3*d(i1,i2)^2*d(i1,i3)*d(i0,i4)
+ pv(172) = SYM d(i0,i1)^2*d(i0,i2)*d(i1,i2)*d(i0,i3)*d(i1,i3)*d(i0,i4)
+ pv(173) = SYM d(i0,i1)*d(i0,i2)^2*d(i1,i2)*d(i0,i3)*d(i1,i3)*d(i0,i4)
+ pv(174) = SYM d(i0,i2)^3*d(i1,i2)*d(i0,i3)*d(i1,i3)*d(i0,i4)
+ pv(175) = SYM d(i0,i1)^2*d(i1,i2)^2*d(i0,i3)*d(i1,i3)*d(i0,i4)
+ pv(176) = SYM d(i0,i1)*d(i0,i2)*d(i1,i2)^2*d(i0,i3)*d(i1,i3)*d(i0,i4)
+ pv(177) = SYM d(i0,i2)^2*d(i1,i2)^2*d(i0,i3)*d(i1,i3)*d(i0,i4)
+ pv(178) = SYM d(i0,i1)*d(i1,i2)^3*d(i0,i3)*d(i1,i3)*d(i0,i4)
+ pv(179) = SYM d(i0,i2)*d(i1,i2)^3*d(i0,i3)*d(i1,i3)*d(i0,i4)
+ pv(180) = SYM d(i0,i2)^2*d(i1,i2)*d(i0,i3)^2*d(i1,i3)*d(i0,i4)
+ pv(181) = SYM d(i0,i1)*d(i1,i2)^2*d(i0,i3)^2*d(i1,i3)*d(i0,i4)
+ pv(182) = SYM d(i0,i2)*d(i1,i2)^2*d(i0,i3)^2*d(i1,i3)*d(i0,i4)
+ pv(183) = SYM d(i1,i2)^3*d(i0,i3)^2*d(i1,i3)*d(i0,i4)
+ pv(184) = SYM d(i1,i2)^2*d(i0,i3)^3*d(i1,i3)*d(i0,i4)
+ pv(185) = SYM d(i0,i1)^2*d(i1,i2)^2*d(i1,i3)^2*d(i0,i4)
+ pv(186) = SYM d(i0,i1)*d(i0,i2)*d(i1,i2)^2*d(i1,i3)^2*d(i0,i4)
+ pv(187) = SYM d(i0,i2)^2*d(i1,i2)^2*d(i1,i3)^2*d(i0,i4)
+ pv(188) = SYM d(i0,i1)*d(i1,i2)^3*d(i1,i3)^2*d(i0,i4)
+ pv(189) = SYM d(i0,i2)*d(i1,i2)^3*d(i1,i3)^2*d(i0,i4)
+ pv(190) = SYM d(i0,i2)*d(i1,i2)^2*d(i0,i3)*d(i1,i3)^2*d(i0,i4)
+ pv(191) = SYM d(i1,i2)^3*d(i0,i3)*d(i1,i3)^2*d(i0,i4)
+ pv(192) = SYM d(i0,i1)^3*d(i1,i2)*d(i1,i3)*d(i2,i3)*d(i0,i4)
+ pv(193) = SYM d(i0,i1)^2*d(i0,i2)*d(i1,i2)*d(i1,i3)*d(i2,i3)*d(i0,i4)
+ pv(194) = SYM d(i0,i1)^2*d(i1,i2)^2*d(i1,i3)*d(i2,i3)*d(i0,i4)
+ pv(195) = SYM d(i0,i1)*d(i0,i2)*d(i1,i2)^2*d(i1,i3)*d(i2,i3)*d(i0,i4)
+ pv(196) = SYM d(i0,i1)*d(i1,i2)^3*d(i1,i3)*d(i2,i3)*d(i0,i4)
+ pv(197) = SYM d(i0,i1)*d(i0,i2)*d(i1,i2)*d(i0,i3)*d(i1,i3)*d(i2,i3)*d(i0,i4)
+ pv(198) = SYM d(i0,i1)*d(i1,i2)^2*d(i0,i3)*d(i1,i3)*d(i2,i3)*d(i0,i4)
+ pv(199) = SYM d(i1,i2)^3*d(i0,i3)*d(i1,i3)*d(i2,i3)*d(i0,i4)
+ pv(200) = SYM d(i1,i2)^2*d(i0,i3)^2*d(i1,i3)*d(i2,i3)*d(i0,i4)
+ pv(201) = SYM d(i0,i1)*d(i1,i2)^2*d(i1,i3)^2*d(i2,i3)*d(i0,i4)
+ pv(202) = SYM d(i0,i2)*d(i1,i2)^2*d(i1,i3)^2*d(i2,i3)*d(i0,i4)
+ pv(203) = SYM d(i0,i1)*d(i0,i2)*d(i1,i2)*d(i0,i3)^2*d(i0,i4)^2
+ pv(204) = SYM d(i0,i1)*d(i1,i2)^2*d(i0,i3)^2*d(i0,i4)^2
+ pv(205) = SYM d(i0,i1)*d(i0,i2)*d(i1,i2)*d(i0,i3)*d(i1,i3)*d(i0,i4)^2
+ pv(206) = SYM d(i0,i2)^2*d(i1,i2)*d(i0,i3)*d(i1,i3)*d(i0,i4)^2
+ pv(207) = SYM d(i0,i1)*d(i1,i2)^2*d(i0,i3)*d(i1,i3)*d(i0,i4)^2
+ pv(208) = SYM d(i0,i2)*d(i1,i2)^2*d(i0,i3)*d(i1,i3)*d(i0,i4)^2
+ pv(209) = SYM d(i0,i1)^2*d(i1,i2)*d(i1,i3)*d(i2,i3)*d(i0,i4)^2
+ pv(210) = SYM d(i0,i1)*d(i0,i2)*d(i1,i2)*d(i1,i3)*d(i2,i3)*d(i0,i4)^2
+ pv(211) = SYM d(i0,i1)*d(i1,i2)^2*d(i1,i3)*d(i2,i3)*d(i0,i4)^2
+ pv(212) = SYM d(i1,i2)^2*d(i0,i3)*d(i1,i3)*d(i2,i3)*d(i0,i4)^2
+ pv(213) = SYM d(i0,i2)*d(i1,i2)*d(i0,i3)*d(i1,i3)*d(i0,i4)^3
+ pv(214) = SYM d(i0,i1)*d(i1,i2)*d(i1,i3)*d(i2,i3)*d(i0,i4)^3
+ pv(215) = SYM d(i0,i1)*d(i0,i2)*d(i1,i2)*d(i0,i3)*d(i1,i3)*d(i0,i4)*d(i1,i4)
+ pv(216) = SYM d(i0,i2)^2*d(i1,i2)*d(i0,i3)*d(i1,i3)*d(i0,i4)*d(i1,i4)
+ pv(217) = SYM d(i0,i1)^2*d(i0,i2)*d(i0,i3)*d(i2,i3)*d(i0,i4)*d(i1,i4)
+ pv(218) = SYM d(i0,i1)^2*d(i1,i2)*d(i0,i3)*d(i2,i3)*d(i0,i4)*d(i1,i4)
+ pv(219) = SYM d(i0,i1)*d(i0,i2)*d(i1,i2)*d(i0,i3)*d(i2,i3)*d(i0,i4)*d(i1,i4)
+ pv(220) = SYM d(i0,i1)*d(i1,i2)^2*d(i0,i3)*d(i2,i3)*d(i0,i4)*d(i1,i4)
+ pv(221) = SYM d(i1,i2)^3*d(i0,i3)*d(i2,i3)*d(i0,i4)*d(i1,i4)
+ pv(222) = SYM d(i0,i2)*d(i1,i2)*d(i0,i3)^2*d(i2,i3)*d(i0,i4)*d(i1,i4)
+ pv(223) = SYM d(i1,i2)^2*d(i0,i3)^2*d(i2,i3)*d(i0,i4)*d(i1,i4)
+ pv(224) = SYM d(i0,i2)*d(i1,i2)*d(i0,i3)*d(i1,i3)*d(i2,i3)*d(i0,i4)*d(i1,i4)
+ pv(225) = SYM d(i0,i1)*d(i0,i2)*d(i0,i3)*d(i2,i3)^2*d(i0,i4)*d(i1,i4)
+ pv(226) = SYM d(i0,i1)*d(i1,i2)*d(i0,i3)*d(i2,i3)^2*d(i0,i4)*d(i1,i4)
+ pv(227) = SYM d(i1,i2)^2*d(i0,i3)*d(i2,i3)^2*d(i0,i4)*d(i1,i4)
+ pv(228) = SYM d(i0,i1)^3*d(i0,i2)*d(i0,i3)*d(i0,i4)*d(i0,i5)
+ pv(229) = SYM d(i0,i1)^2*d(i0,i2)^2*d(i0,i3)*d(i0,i4)*d(i0,i5)
+ pv(230) = SYM d(i0,i1)^3*d(i1,i2)*d(i0,i3)*d(i0,i4)*d(i0,i5)
+ pv(231) = SYM d(i0,i1)^2*d(i0,i2)*d(i1,i2)*d(i0,i3)*d(i0,i4)*d(i0,i5)
+ pv(232) = SYM d(i0,i1)^2*d(i1,i2)^2*d(i0,i3)*d(i0,i4)*d(i0,i5)
+ pv(233) = SYM d(i0,i1)*d(i0,i2)*d(i1,i2)^2*d(i0,i3)*d(i0,i4)*d(i0,i5)
+ pv(234) = SYM d(i0,i1)*d(i1,i2)^3*d(i0,i3)*d(i0,i4)*d(i0,i5)
+ pv(235) = SYM d(i0,i1)^2*d(i1,i2)*d(i0,i3)^2*d(i0,i4)*d(i0,i5)
+ pv(236) = SYM d(i0,i1)*d(i0,i2)*d(i1,i2)*d(i0,i3)^2*d(i0,i4)*d(i0,i5)
+ pv(237) = SYM d(i0,i1)*d(i1,i2)^2*d(i0,i3)^2*d(i0,i4)*d(i0,i5)
+ pv(238) = SYM d(i0,i1)^3*d(i1,i2)*d(i1,i3)*d(i0,i4)*d(i0,i5)
+ pv(239) = SYM d(i0,i1)^2*d(i0,i2)*d(i1,i2)*d(i1,i3)*d(i0,i4)*d(i0,i5)
+ pv(240) = SYM d(i0,i1)*d(i0,i2)^2*d(i1,i2)*d(i1,i3)*d(i0,i4)*d(i0,i5)
+ pv(241) = SYM d(i0,i2)^3*d(i1,i2)*d(i1,i3)*d(i0,i4)*d(i0,i5)
+ pv(242) = SYM d(i0,i1)^2*d(i1,i2)^2*d(i1,i3)*d(i0,i4)*d(i0,i5)
+ pv(243) = SYM d(i0,i1)*d(i0,i2)*d(i1,i2)^2*d(i1,i3)*d(i0,i4)*d(i0,i5)
+ pv(244) = SYM d(i0,i2)^2*d(i1,i2)^2*d(i1,i3)*d(i0,i4)*d(i0,i5)
+ pv(245) = SYM d(i0,i2)*d(i1,i2)^3*d(i1,i3)*d(i0,i4)*d(i0,i5)
+ pv(246) = SYM d(i0,i1)*d(i0,i2)*d(i1,i2)*d(i0,i3)*d(i1,i3)*d(i0,i4)*d(i0,i5)
+ pv(247) = SYM d(i0,i2)^2*d(i1,i2)*d(i0,i3)*d(i1,i3)*d(i0,i4)*d(i0,i5)
+ pv(248) = SYM d(i0,i1)*d(i1,i2)^2*d(i0,i3)*d(i1,i3)*d(i0,i4)*d(i0,i5)
+ pv(249) = SYM d(i0,i2)*d(i1,i2)^2*d(i0,i3)*d(i1,i3)*d(i0,i4)*d(i0,i5)
+ pv(250) = SYM d(i1,i2)^3*d(i0,i3)*d(i1,i3)*d(i0,i4)*d(i0,i5)
+ pv(251) = SYM d(i1,i2)^2*d(i0,i3)^2*d(i1,i3)*d(i0,i4)*d(i0,i5)
+ pv(252) = SYM d(i0,i1)*d(i1,i2)^2*d(i1,i3)^2*d(i0,i4)*d(i0,i5)
+ pv(253) = SYM d(i0,i2)*d(i1,i2)^2*d(i1,i3)^2*d(i0,i4)*d(i0,i5)
+ pv(254) = SYM d(i0,i1)^2*d(i1,i2)*d(i1,i3)*d(i2,i3)*d(i0,i4)*d(i0,i5)
+ pv(255) = SYM d(i0,i1)*d(i0,i2)*d(i1,i2)*d(i1,i3)*d(i2,i3)*d(i0,i4)*d(i0,i5)
+ pv(256) = SYM d(i0,i1)*d(i1,i2)^2*d(i1,i3)*d(i2,i3)*d(i0,i4)*d(i0,i5)
+ pv(257) = SYM d(i1,i2)^2*d(i0,i3)*d(i1,i3)*d(i2,i3)*d(i0,i4)*d(i0,i5)
+ pv(258) = SYM d(i0,i1)*d(i0,i2)*d(i1,i2)*d(i1,i3)*d(i0,i4)^2*d(i0,i5)
+ pv(259) = SYM d(i0,i2)^2*d(i1,i2)*d(i1,i3)*d(i0,i4)^2*d(i0,i5)
+ pv(260) = SYM d(i0,i2)*d(i1,i2)*d(i0,i3)*d(i1,i3)*d(i0,i4)^2*d(i0,i5)
+ pv(261) = SYM d(i1,i2)^2*d(i0,i3)*d(i1,i3)*d(i0,i4)^2*d(i0,i5)
+ pv(262) = SYM d(i0,i2)*d(i1,i2)*d(i1,i3)*d(i0,i4)^3*d(i0,i5)
+ pv(263) = SYM d(i0,i1)*d(i0,i2)*d(i1,i2)*d(i0,i3)*d(i1,i3)*d(i1,i4)*d(i0,i5)
+ pv(264) = SYM d(i0,i2)^2*d(i1,i2)*d(i0,i3)*d(i1,i3)*d(i1,i4)*d(i0,i5)
+ pv(265) = SYM d(i0,i1)^2*d(i0,i2)^2*d(i2,i3)*d(i1,i4)*d(i0,i5)
+ pv(266) = SYM d(i0,i1)^2*d(i0,i2)*d(i1,i2)*d(i2,i3)*d(i1,i4)*d(i0,i5)
+ pv(267) = SYM d(i0,i1)^2*d(i0,i2)*d(i0,i3)*d(i2,i3)*d(i1,i4)*d(i0,i5)
+ pv(268) = SYM d(i0,i1)*d(i0,i2)^2*d(i0,i3)*d(i2,i3)*d(i1,i4)*d(i0,i5)
+ pv(269) = SYM d(i0,i1)^2*d(i1,i2)*d(i0,i3)*d(i2,i3)*d(i1,i4)*d(i0,i5)
+ pv(270) = SYM d(i0,i1)*d(i0,i2)*d(i1,i2)*d(i0,i3)*d(i2,i3)*d(i1,i4)*d(i0,i5)
+ pv(271) = SYM d(i0,i2)^2*d(i1,i2)*d(i0,i3)*d(i2,i3)*d(i1,i4)*d(i0,i5)
+ v(104:272) = pv(103:271)
