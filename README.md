@@ -22,17 +22,17 @@ See below for the options available.
 
 * q-AQUA-pol (general many-body water potential): can be used for both small gas-phase clusters and condensed phases. Use option `-m q-aqua-pol`. The total number of water molecules must be supplied by the -o option, e.g., `-o 256`.
 
-* Protonated oxalate anion: use option `-m oxalate`.
+* Protonated oxalate anion: use option `-m oxalate`
 
-* CH<sub>5</sub><sup>+</sup>: use option `-m ch5p`.
+* CH<sub>5</sub><sup>+</sup>: use option `-m ch5p`
 
-* Ethanol: use option `-m ethanol`.
+* Ethanol: use option `-m ethanol`
 
-* N-methylacetamide: use option `-m NMA`.
+* N-methylacetamide: use option `-m NMA`
 
 * Aspirin (standalone)
 
-* Hydrated proton and dipole moment surface (standalone). 
+* Hydrated proton and dipole moment surface (standalone)
 
 ## Example Inputs
 Example i-PI input files for short MD simulations and/or harmonic frequency analysis and initial geometries are provided in `examples`.
