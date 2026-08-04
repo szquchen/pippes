@@ -30,6 +30,8 @@ See below for the options available.
 
 * N-methylacetamide: use option `-m NMA`.
 
+* Aspirin (standalone)
+
 * Hydrated proton and dipole moment surface (standalone). 
 
 ## Example Inputs
